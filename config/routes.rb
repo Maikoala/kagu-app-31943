@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'shops/index'
   devise_for :owners, controllers: {
     sessions:      'owners/sessions',
     passwords:     'owners/passwords',
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+  root to: "shops#index"
 end
