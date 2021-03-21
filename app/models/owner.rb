@@ -23,4 +23,7 @@ class Owner < ApplicationRecord
 
   has_one :shop
   has_many :items
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :state_province
 end
