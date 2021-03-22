@@ -1,16 +1,16 @@
 <header>
-  <ul class='lists-right'>
+  <ul>
       <% if owner_signed_in? %>
-        <li><%= link_to current_owner.nickname, "#", class: "user-nickname" %></li> 
-        <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %> </li>
+        <li><%= link_to current_owner.account_name, "#" %></li> 
+        <li><%= link_to 'ログアウト', destroy_owner_session_path, method: :delete %> </li>
       <% elsif user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
-        <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %> </li>
+        <li><%= link_to current_user.nickname, "#" %></li> 
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
       <% else %>
-        <li><%= link_to 'オーナーログイン', new_owner_session_path, class: "login" %></li>
-        <li><%= link_to 'オーナー新規登録', new_owner_registration_path, class: "sign-up" %></li>
-        <li><%= link_to 'ユーザーログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to 'ユーザー新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'オーナーログイン', new_owner_session_path %></li>
+        <li><%= link_to 'オーナー新規登録', new_owner_registration_path %></li>
+        <li><%= link_to 'ユーザーログイン', new_user_session_path %></li>
+        <li><%= link_to 'ユーザー新規登録', new_user_registration_path %></li>
       <% end %>
     </ul>
 </header>
