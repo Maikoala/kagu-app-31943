@@ -1,7 +1,7 @@
 <h2>オーナー登録</h2>
 
 <%= form_with model: @owner, url: owner_registration_path, local: true do |f| %>
-  <%= render "owners/shared/error_messages", resource: resource %>
+  <%= render "shared/error_messages", model: f.object %>
 
   <div class="field">
     <div>
