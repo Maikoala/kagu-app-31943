@@ -34,14 +34,14 @@ RSpec.describe Owner, type: :model do
       it 'emailに@がないと登録できないこと' do
         @owner.email = 'abcdefghijk'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Email is invalid"
+        expect(@owner.errors.full_messages).to include 'Email is invalid'
       end
 
       it '重複するemailでは登録できないこと' do
         @owner.save
         another_owner = FactoryBot.build(:owner, email: @owner.email)
         another_owner.valid?
-        expect(another_owner.errors.full_messages).to include "Email has already been taken"
+        expect(another_owner.errors.full_messages).to include 'Email has already been taken'
       end
 
       it 'passwordが空だと登録できないこと' do
@@ -53,29 +53,29 @@ RSpec.describe Owner, type: :model do
       it 'passwordが５文字以下のとき登録できないこと' do
         @owner.password = 'ab12'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+        expect(@owner.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
       end
 
       it 'passwordが全角のとき登録できないこと' do
         @owner.password = 'ａｂｃ１２３'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Password Include both letters and numbers"
+        expect(@owner.errors.full_messages).to include 'Password Include both letters and numbers'
       end
 
       it 'passwordが英字のみのとき登録できないこと' do
         @owner.password = 'abcdefg'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Password Include both letters and numbers"
+        expect(@owner.errors.full_messages).to include 'Password Include both letters and numbers'
       end
 
       it 'passwordが数字のみのとき登録できないこと' do
         @owner.password = '1234567'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Password Include both letters and numbers"
+        expect(@owner.errors.full_messages).to include 'Password Include both letters and numbers'
       end
 
       it 'passwordが存在してもpassword_confirmationが空だと登録できないこと' do
-        @owner.password_confirmation = ""
+        @owner.password_confirmation = ''
         @owner.valid?
         expect(@owner.errors.full_messages).to include "Password confirmation doesn't match Password"
       end
@@ -96,13 +96,13 @@ RSpec.describe Owner, type: :model do
       it 'first_nameが半角のとき登録できないこと' do
         @owner.first_name = 'ﾏｺﾄ'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "First name Full-width characters"
+        expect(@owner.errors.full_messages).to include 'First name Full-width characters'
       end
 
       it 'first_nameが英字のとき登録できないこと' do
         @owner.first_name = 'ｍａｋｏｔｏ'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "First name Full-width characters"
+        expect(@owner.errors.full_messages).to include 'First name Full-width characters'
       end
 
       it 'last_nameが空だと登録できないこと' do
@@ -114,13 +114,13 @@ RSpec.describe Owner, type: :model do
       it 'last_nameが半角のとき登録できないこと' do
         @owner.last_name = 'ｽｽﾞｷ'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Last name Full-width characters"
+        expect(@owner.errors.full_messages).to include 'Last name Full-width characters'
       end
 
       it 'last_nameが英字のとき登録できないこと' do
         @owner.last_name = 'ｓｕｚｕｋｉ'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Last name Full-width characters"
+        expect(@owner.errors.full_messages).to include 'Last name Full-width characters'
       end
 
       it 'first_name_kanaが空だと登録できないこと' do
@@ -132,13 +132,13 @@ RSpec.describe Owner, type: :model do
       it 'first_name_kanaが半角のとき登録できないこと' do
         @owner.first_name_kana = 'ﾋﾛｷ'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "First name kana Full-width katakana characters"
+        expect(@owner.errors.full_messages).to include 'First name kana Full-width katakana characters'
       end
 
       it 'first_name_kanaがカタカナでないとき登録できないこと' do
         @owner.first_name_kana = 'ひろき'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "First name kana Full-width katakana characters"
+        expect(@owner.errors.full_messages).to include 'First name kana Full-width katakana characters'
       end
 
       it 'last_name_kanaが空だと登録できないこと' do
@@ -150,13 +150,13 @@ RSpec.describe Owner, type: :model do
       it 'last_name_kanaが半角のとき登録できないこと' do
         @owner.last_name_kana = 'ｻﾄｳ'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Last name kana Full-width katakana characters"
+        expect(@owner.errors.full_messages).to include 'Last name kana Full-width katakana characters'
       end
 
       it 'last_name_kanaがカタカナでないとき登録できないこと' do
         @owner.last_name_kana = '佐藤'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Last name kana Full-width katakana characters"
+        expect(@owner.errors.full_messages).to include 'Last name kana Full-width katakana characters'
       end
 
       it 'postal_codeが空だと登録できないこと' do
@@ -168,19 +168,19 @@ RSpec.describe Owner, type: :model do
       it 'postal_codeにハイフンがないとき登録できないこと' do
         @owner.postal_code = '1234567'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Postal code Input correctly"
+        expect(@owner.errors.full_messages).to include 'Postal code Input correctly'
       end
 
       it 'postal_codeが全角のとき登録できないこと' do
         @owner.postal_code = '１１１２２２２'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Postal code Input correctly"
+        expect(@owner.errors.full_messages).to include 'Postal code Input correctly'
       end
 
       it 'postal_codeが数字以外のとき登録できないこと' do
         @owner.postal_code = 'jjj-kkkk'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Postal code Input correctly"
+        expect(@owner.errors.full_messages).to include 'Postal code Input correctly'
       end
 
       it 'state_province_idが空だと登録できないこと' do
@@ -192,7 +192,7 @@ RSpec.describe Owner, type: :model do
       it 'state_province_idを選択していないとき登録できないこと' do
         @owner.state_province_id = 1
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "State province Select"
+        expect(@owner.errors.full_messages).to include 'State province Select'
       end
 
       it 'cityが空だと登録できないこと' do
@@ -216,31 +216,31 @@ RSpec.describe Owner, type: :model do
       it 'phone_numberが全角のとき登録できないこと' do
         @owner.phone_number = '０８０６７８９４３２１'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Phone number Input only number"
+        expect(@owner.errors.full_messages).to include 'Phone number Input only number'
       end
 
       it 'phone_numberが数字以外のとき登録できないこと' do
         @owner.phone_number = 'cccccxxxxxx'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Phone number Input only number"
+        expect(@owner.errors.full_messages).to include 'Phone number Input only number'
       end
 
       it 'phone_numberにハイフンがあるとき登録できないこと' do
         @owner.phone_number = '090-7777-6666'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Phone number Input only number"
+        expect(@owner.errors.full_messages).to include 'Phone number Input only number'
       end
 
       it 'phone_numberが9桁以下のとき登録できないこと' do
         @owner.phone_number = '034567890'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Phone number Input only number"
+        expect(@owner.errors.full_messages).to include 'Phone number Input only number'
       end
 
       it 'phone_numberが12桁以上のとき登録できないこと' do
         @owner.phone_number = '080111112222'
         @owner.valid?
-        expect(@owner.errors.full_messages).to include "Phone number Input only number"
+        expect(@owner.errors.full_messages).to include 'Phone number Input only number'
       end
 
       it 'birthdayが空だと登録できないこと' do

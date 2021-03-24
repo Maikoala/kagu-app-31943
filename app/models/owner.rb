@@ -12,7 +12,7 @@ class Owner < ApplicationRecord
     validates :first_name_kana, :last_name_kana,
               format: { with: /\A([ァ-ン]|ー)+\z/,
                         message: 'Full-width katakana characters' }
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' } 
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' }
     validates :state_province_id, numericality: { other_than: 1, message: 'Select' }
     validates :city
     validates :address_line_1

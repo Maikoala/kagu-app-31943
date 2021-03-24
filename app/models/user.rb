@@ -12,7 +12,7 @@ class User < ApplicationRecord
     validates :first_name_kana, :last_name_kana,
               format: { with: /\A([ァ-ン]|ー)+\z/,
                         message: 'Full-width katakana characters' }
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' } 
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' }
     validates :birthday
   end
   validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]+\z/, message: 'Include both letters and numbers' }
