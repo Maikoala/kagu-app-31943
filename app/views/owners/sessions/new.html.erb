@@ -1,0 +1,30 @@
+<h2>オーナーログイン</h2>
+
+<%= link_to "ユーザーはこちら", new_owner_session_path %>
+
+<%= form_with model:@owner, url:owner_session_path, local: true do |f| %>
+  <div>
+    <%= flash[:alert] %>
+  </div>
+  <div>
+    <div>
+      <label>メールアドレス</label>
+      <span>必須</span>
+    </div>
+    <%= f.email_field :email, placeholder:"PC・携帯どちらでも可", autofocus: true %>
+  </div>
+
+  <div>
+    <div>
+      <label>パスワード</label>
+      <span>必須</span>
+    </div>
+    <%= f.password_field :password, placeholder:"" %>
+  </div>
+
+  <div>
+    <%= f.submit "ログイン" %>
+  </div>
+
+  <%= link_to "新規登録", new_owner_registration_path %>
+<% end %>
