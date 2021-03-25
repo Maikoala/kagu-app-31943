@@ -1,6 +1,5 @@
 class ShopsController < ApplicationController
   before_action :authenticate_owner!, only: [:new, :create]
-  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @shops = Shop.order(:name)
