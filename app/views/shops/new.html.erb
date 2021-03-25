@@ -1,0 +1,13 @@
+<%= form_with model:@shop ,local: true do |form| %>
+  <%= render "shared/error_messages", model: form.object %>
+
+  <div>
+    ショップ名
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    店舗情報
+    <%= form.text_area :info %>
+  </div>
+  <%= form.submit "作成する" %>
+<% end %>

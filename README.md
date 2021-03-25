@@ -46,10 +46,11 @@
 
 ## shops テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| name   | string     | null: false, unique: true      |
-| owner  | references | null: false, foreign_key: true |
+| Column | Type       | Options                                      |
+| ------ | ---------- | -------------------------------------------- |
+| name   | string     | null: false, unique: true                    |
+| info   | text       | null: false, limit: 1500                     |
+| owner  | references | null: false, foreign_key: true, unique: true |
 
 ### Association
 

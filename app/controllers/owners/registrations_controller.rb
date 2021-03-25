@@ -1,5 +1,4 @@
 class Owners::RegistrationsController < Devise::RegistrationsController
-  before_action :authenticate_owner!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
