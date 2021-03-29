@@ -80,9 +80,9 @@
 
 ## categories テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| category_name_id | integer | null: false |
 
 ### Association
 
