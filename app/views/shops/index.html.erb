@@ -5,7 +5,7 @@
   <% if @shops.present? %>
     <% @shops.each do |shop| %>
       <li>
-        <%= link_to shop.name, shop_items(shop.id) %>
+        <%= link_to shop.name, shop_items_path(shop.id) %>
       </li>
     <% end %>
   <% else %>

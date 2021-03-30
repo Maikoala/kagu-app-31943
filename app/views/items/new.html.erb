@@ -1,0 +1,32 @@
+<h2>商品の出品</h2>
+
+<%= form_with model: @item_category, url: shop_items_path, local: true do |form| %>
+  <%= render "shared/error_messages", model: form.object %>
+
+  <div>
+    <%= form.label :image, '商品画像' %>
+    <%= form.file_field :image %>
+  <div>
+    <%= form.label :name, '商品名' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :info, '商品情報' %>
+    <%= form.text_area :info %>
+  </div>
+    <div>
+    <%= form.label :category_name_id, 'カテゴリー' %>
+    <%= form.collection_select(:category_name_id, CategoryName.all, :id, :name, {}, {}) %>
+  </div>
+  <div>
+    <%= form.label :color_id, '色' %>
+    <%= form.collection_select(:color_id, Color.all, :id, :name, {}, {}) %>
+  </div>
+  <div>
+    <%= form.label :price, '価格' %>
+    <%= form.text_field :price %>
+  </div>
+  <div>
+    <%= form.submit '出品する' %>
+  </div>
+<% end %>

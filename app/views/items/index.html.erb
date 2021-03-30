@@ -1,0 +1,16 @@
+<h1>商品一覧</h1>
+
+<%= link_to '出品する', new_shop_item_path %>
+
+<div>
+<% if @items.present? %>
+  <% @items.each do |item| %>
+    <%= image_tag item.image.variant(resize: '400x400') %>
+    <div>
+    <%= item.name %>
+    </div>
+  <% end %>
+<% else %>
+  商品を出品してください
+<% end %>
+</div>
