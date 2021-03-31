@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_owner!, only: [:new, :create] 
 
   def index
-    @items = Item.order('created_at DESC')
+    @shop = Shop.find(params[:shop_id])
+    @items = @shop.items.order('created_at DESC')
   end
 
   def new
