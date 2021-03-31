@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'items/index'
   get 'shops/index'
   devise_for :owners, controllers: {
     sessions:      'owners/sessions',
@@ -12,5 +13,7 @@ Rails.application.routes.draw do
   }
   root to: "shops#index"
 
-  resources :shops, only:[:index, :new, :create, :show]
+  resources :shops, only: [:index, :new, :create] do
+    resources :items, only: [:index, :new, :create]
+  end
 end
