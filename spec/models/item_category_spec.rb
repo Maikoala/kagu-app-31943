@@ -31,7 +31,7 @@ RSpec.describe ItemCategory, type: :model do
       it 'nameが41文字以上だと保存できないこと' do
         @item_category.name = 'あいうえおabcdef' * 4
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Name is too long (maximum is 40 characters)"
+        expect(@item_category.errors.full_messages).to include 'Name is too long (maximum is 40 characters)'
       end
 
       it 'infoが空だと保存できないこと' do
@@ -43,7 +43,7 @@ RSpec.describe ItemCategory, type: :model do
       it 'infoが1501文字以上だと保存できないこと' do
         @item_category.info = 'アイウエオかきくけこabcde漢' * 100
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Info is too long (maximum is 1500 characters)"
+        expect(@item_category.errors.full_messages).to include 'Info is too long (maximum is 1500 characters)'
       end
 
       it 'category_name_idが空だと保存できないこと' do
@@ -55,7 +55,7 @@ RSpec.describe ItemCategory, type: :model do
       it 'category_name_idを選択していないと保存できないこと' do
         @item_category.category_name_id = 1
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Category name select"
+        expect(@item_category.errors.full_messages).to include 'Category name select'
       end
 
       it 'color_idが空だと保存できないこと' do
@@ -67,7 +67,7 @@ RSpec.describe ItemCategory, type: :model do
       it 'color_idを選択していないと保存できないこと' do
         @item_category.color_id = 1
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Color select"
+        expect(@item_category.errors.full_messages).to include 'Color select'
       end
 
       it 'priceが空だと保存できないこと' do
@@ -79,37 +79,37 @@ RSpec.describe ItemCategory, type: :model do
       it 'priceが100円未満だと保存できないこと' do
         @item_category.price = 99
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Price out of setting range"
+        expect(@item_category.errors.full_messages).to include 'Price out of setting range'
       end
 
       it 'priceが10,000,000円以上だと保存できないこと' do
         @item_category.price = 10_000_000
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Price out of setting range"
+        expect(@item_category.errors.full_messages).to include 'Price out of setting range'
       end
 
       it 'priceが全角だと保存できないこと' do
         @item_category.price = '５０００'
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Price half-width number"
+        expect(@item_category.errors.full_messages).to include 'Price half-width number'
       end
 
       it 'priceが数字以外だと保存できないこと' do
         @item_category.price = 'abc'
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Price half-width number"
+        expect(@item_category.errors.full_messages).to include 'Price half-width number'
       end
 
       it 'priceが半角英数混合だと保存できないこと' do
         @item_category.price = '333qqq'
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Price half-width number"
+        expect(@item_category.errors.full_messages).to include 'Price half-width number'
       end
 
       it 'priceが整数以外だと保存できないこと' do
         @item_category.price = 4000.11
         @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Price half-width number"
+        expect(@item_category.errors.full_messages).to include 'Price half-width number'
       end
 
       it 'owner_idが空だと保存できないこと' do

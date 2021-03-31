@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_owner!, only: [:new, :create] 
+  before_action :authenticate_owner!, only: [:new, :create]
 
   def index
     @shop = Shop.find(params[:shop_id])
@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item_category).permit(:image, :name, :info, :color_id, :price, :category_name_id ).merge( owner_id: current_owner.id, shop_id: params[:shop_id] )
+    params.require(:item_category).permit(:image, :name, :info, :color_id, :price, :category_name_id).merge(
+      owner_id: current_owner.id, shop_id: params[:shop_id]
+    )
   end
 end
