@@ -1,0 +1,30 @@
+<%= @shop.name %> 
+<div>
+<%= image_tag @item.image.variant(resize: '750x750') %>
+</div>
+<div>
+<h2><%= @item.name %></h2>
+</div>
+<div>
+  <% if owner_signed_in? && current_owner == @shop.owner %>
+    <%= link_to '編集', edit_shop_item_path(@shop.id, @item.id) %>
+    <%= link_to '削除', shop_item_path(@shop.id, @item.id), method: :delete %>
+  <% end %>
+</div>
+<div>
+  <% if user_signed_in? %>
+    <%= link_to '購入', "#" %>
+  <% end %>
+<div>
+カテゴリー：<%= @item.category.category_name.name %>
+</div>
+<br>
+<div>
+カラー：<%= @item.color.name %>
+</div>
+<div>
+<h2>¥<%= @item.price %></h2>
+</div>
+<div>
+<%= @item.info %>
+</div>
