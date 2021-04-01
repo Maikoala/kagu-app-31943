@@ -31,7 +31,7 @@ class ItemCategory
     ActiveRecord::Base.transaction do
       @category.update(category_name_id: category_name_id)
       @item.update(image: image, name: name, info: info, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
-        category_id: @category.id)
+                   category_id: @category.id)
     end
   end
 
@@ -50,8 +50,8 @@ class ItemCategory
       info: item.info,
       color_id: item.color_id,
       price: item.price,
-      owner_id: item.owner_id, 
-      shop_id: item.shop_id,
+      owner_id: item.owner_id,
+      shop_id: item.shop_id
     }
   end
 end
