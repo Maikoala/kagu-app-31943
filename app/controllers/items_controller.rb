@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_owner!, only: [:new, :create]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @shop = Shop.find(params[:shop_id])
@@ -20,11 +21,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def delete
+  end
+
   private
 
   def item_params
     params.require(:item_category).permit(:image, :name, :info, :color_id, :price, :category_name_id).merge(
       owner_id: current_owner.id, shop_id: params[:shop_id]
     )
+  end
+
+  def set_item
+    @shop = Shop.find(params[:shop_id])
+    @item = Item.find(params[:id])
   end
 end
