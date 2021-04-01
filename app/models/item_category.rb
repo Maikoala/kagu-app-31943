@@ -17,9 +17,41 @@ class ItemCategory
   validates :price, numericality: { greater_than_or_equal_to: 100,
                                     less_than_or_equal_to: 9_999_999,
                                     message: 'out of setting range' }
+
+  delegate :persisted?, to: :item
+
+  def initialize(attributes = nil, category: Category.new, item: Item.new)
+    @category = category
+    @item = item
+    attributes ||= default_attributes
+    super(attributes)
+  end
+
   def save
-    category = Category.create(category_name_id: category_name_id)
-    Item.create(image: image, name: name, info: info, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
-                category_id: category.id)
+    ActiveRecord::Base.transaction do
+      @category.update(category_name_id: category_name_id)
+      @item.update(image: image, name: name, info: info, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
+                   category_id: @category.id)
+    end
+  end
+
+  def to_model
+    item
+  end
+
+  private
+
+  attr_reader :item, :category
+
+  def default_attributes
+    {
+      image: item.image,
+      name: item.name,
+      info: item.info,
+      color_id: item.color_id,
+      price: item.price,
+      owner_id: item.owner_id,
+      shop_id: item.shop_id
+    }
   end
 end
