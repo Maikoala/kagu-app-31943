@@ -6,6 +6,7 @@
   <div>
     <%= form.label :image, '商品画像' %>
     <%= form.file_field :image %>
+  </div>
   <div>
     <%= form.label :name, '商品名' %>
     <%= form.text_field :name %>
@@ -14,7 +15,7 @@
     <%= form.label :info, '商品情報' %>
     <%= form.text_area :info %>
   </div>
-    <div>
+  <div>
     <%= form.label :category_name_id, 'カテゴリー' %>
     <%= form.collection_select(:category_name_id, CategoryName.all, :id, :name, {}, {}) %>
   </div>
