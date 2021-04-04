@@ -46,26 +46,14 @@ RSpec.describe ItemCategory, type: :model do
         expect(@item_category.errors.full_messages).to include 'Info is too long (maximum is 1500 characters)'
       end
 
-      it 'category_name_idが空だと保存できないこと' do
-        @item_category.category_name_id = nil
-        @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Category name can't be blank"
-      end
-
       it 'category_name_idを選択していないと保存できないこと' do
-        @item_category.category_name_id = 1
+        @item_category.category_name_id = nil
         @item_category.valid?
         expect(@item_category.errors.full_messages).to include 'Category name select'
       end
 
-      it 'color_idが空だと保存できないこと' do
-        @item_category.color_id = nil
-        @item_category.valid?
-        expect(@item_category.errors.full_messages).to include "Color can't be blank"
-      end
-
       it 'color_idを選択していないと保存できないこと' do
-        @item_category.color_id = 1
+        @item_category.color_id = nil
         @item_category.valid?
         expect(@item_category.errors.full_messages).to include 'Color select'
       end
