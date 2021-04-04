@@ -1,11 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_owner!, only: [:new, :create, :edit, :create]
-  before_action :set_shop, only: [:new, :create]
-  before_action :set_shop_item, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:new, :create, :edit, :update]
+  before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_shop, only: [:index, :new, :create]
+  before_action :set_shop_item, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @shop = Shop.find(params[:shop_id])
     @items = @shop.items.order('created_at DESC')
   end
 
@@ -40,7 +39,8 @@ class ItemsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    redirect_to action: :index if @item.destroy
   end
 
   private
