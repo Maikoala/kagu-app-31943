@@ -6,8 +6,8 @@ class ItemCategory
     validates :image
     validates :name, length: { maximum: 40 }
     validates :info, length: { maximum: 1500 }
-    validates :category_name_id, numericality: { other_than: 1, message: 'select' }
-    validates :color_id, numericality: { other_than: 1, message: 'select' }
+    validates :category_name_id, numericality: { message: 'select' }
+    validates :color_id, numericality: { message: 'select' }
     validates :price, numericality: { only_integer: true,
                                       with: /\A[0-9]+\z/,
                                       message: 'half-width number' }

@@ -22,11 +22,11 @@
   </div>
   <div>
     <%= form.label :category_name_id, 'カテゴリー' %>
-    <%= form.collection_select(:category_name_id, CategoryName.all, :id, :name, {}, {}) %>
+    <%= form.collection_select(:category_name_id, CategoryName.all, :id, :name, {include_blank: "--"}, {}) %>
   </div>
   <div>
     <%= form.label :color_id, '色' %>
-    <%= form.collection_select(:color_id, Color.all, :id, :name, {}, {}) %>
+    <%= form.collection_select(:color_id, Color.all, :id, :name, {include_blank: "--"}, {}) %>
   </div>
   <div>
     <%= form.label :price, '価格' %>
