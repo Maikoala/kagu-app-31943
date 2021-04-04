@@ -52,4 +52,5 @@ class StateProvince < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :owners
+  has_many :addresses
 end

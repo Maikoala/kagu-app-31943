@@ -105,17 +105,17 @@
 
 ## addresses テーブル
 
-| Column            | Type      | Options                        |
-| ----------------- | --------- | ------------------------------ |
-| first_name        | string    | null: false                    |
-| last_name         | string    | null: false                    |
-| postal_code       | string    | null: false                    |
-| state_province_id | integer   | null: false                    |
-| city              | string    | null: false                    |
-| address_line_1    | string    | null: false                    |
-| address_line_2    | string    |                                |
-| phone_number      | string    | null: false                    |
-| order             | reference | null: false, foreign_key: true |
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| first_name        | string     | null: false                    |
+| last_name         | string     | null: false                    |
+| postal_code       | string     | null: false                    |
+| state_province_id | integer    | null: false                    |
+| city              | string     | null: false                    |
+| address_line_1    | string     | null: false                    |
+| address_line_2    | string     |                                |
+| phone_number      | string     | null: false                    |
+| order             | references | null: false, foreign_key: true |
 
 ### Association
 
