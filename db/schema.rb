@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_092810) do
+ActiveRecord::Schema.define(version: 2021_04_04_060438) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2021_03_29_092810) do
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["owner_id"], name: "index_items_on_owner_id"
     t.index ["shop_id"], name: "index_items_on_shop_id"
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_orders_on_item_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "owners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,5 +119,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_092810) do
   add_foreign_key "items", "categories"
   add_foreign_key "items", "owners"
   add_foreign_key "items", "shops"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "users"
   add_foreign_key "shops", "owners"
 end
