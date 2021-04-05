@@ -15,17 +15,17 @@
   合計：¥<%= @item.price + 500 %>
 </div>
 
-<%= form_with model: @order_address, url: item_orders_path, local: true do |f| %>
+<%= form_with model: @order_address, url: item_orders_path, id: 'charge-form', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <p>クレジットカード情報</p>
   <div>
-  カード情報<%#= f.text_field 'number', placeholder:"カード番号(半角英数字)", maxlength:"16"%>
+  カード情報<%= f.text_field 'number', id: 'card-number', placeholder:"カード番号(半角英数字)", maxlength:"16"%>
   </div>
   <div>
-  有効期限<%#= f.text_area 'exp_month', placeholder:"例)3" %>月/ <%#= f.text_area 'exp_year', placeholder:"例)23" %>年
+  有効期限<%= f.text_area 'exp_month', id: 'card-exp-month', placeholder:"例)3" %>月/ <%= f.text_area 'exp_year', id: 'card-exp-year', placeholder:"例)23" %>年
   </div>
   <div>
-  セキュリティコード<%#= f.text_field "cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+  セキュリティコード<%= f.text_field "cvc", id: 'card-cvc', placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
   </div>
 
   <p>配送先</p>
