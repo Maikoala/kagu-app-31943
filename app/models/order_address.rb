@@ -1,7 +1,8 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :token, :user_id, :item_id, :first_name, :last_name, :postal_code, :state_province_id, :city, :address_line_1, :address_line_2, :phone_number
-  
+  attr_accessor :token, :user_id, :item_id, :first_name, :last_name, :postal_code, :state_province_id, :city, :address_line_1,
+                :address_line_2, :phone_number
+
   with_options presence: true do
     validates :token
     validates :user_id
@@ -18,6 +19,7 @@ class OrderAddress
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
-    Address.create(first_name: first_name, last_name: last_name, postal_code: postal_code, state_province_id: state_province_id, city: city, address_line_1: address_line_1, address_line_2: address_line_2, phone_number: phone_number, order_id: order.id)
+    Address.create(first_name: first_name, last_name: last_name, postal_code: postal_code, state_province_id: state_province_id,
+                   city: city, address_line_1: address_line_1, address_line_2: address_line_2, phone_number: phone_number, order_id: order.id)
   end
 end
