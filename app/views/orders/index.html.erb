@@ -1,0 +1,58 @@
+<%= image_tag @item.image.variant(resize: '750x750') %>
+<div>
+  購入内容の確認
+</div>
+<div>
+  <%= @item.name %>
+</div>
+<div>
+  金額：¥<%= @item.price %>
+</div>
+<div>
+  送料：¥500（全国一律）
+</div>
+<div>
+  合計：¥<%= @item.price + 500 %>
+</div>
+
+<%= form_with model: @order_address, url: item_orders_path, id: 'charge-form', local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <p>クレジットカード情報</p>
+  <div>
+  カード情報<%= f.text_field 'number', id: 'card-number', placeholder:"カード番号(半角英数字)", maxlength:"16"%>
+  </div>
+  <div>
+  有効期限<%= f.text_area 'exp_month', id: 'card-exp-month', placeholder:"例)3" %>月/ <%= f.text_area 'exp_year', id: 'card-exp-year', placeholder:"例)23" %>年
+  </div>
+  <div>
+  セキュリティコード<%= f.text_field "cvc", id: 'card-cvc', placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+  </div>
+
+  <p>配送先</p>
+  <div>
+  名前
+  <%= f.text_area :last_name, placeholder:"例) 佐藤" %>
+  <%= f.text_area :first_name, placeholder:"例) かぐ太" %>
+  </div>
+  <div>
+  郵便番号<%= f.text_field :postal_code, placeholder:"例）123-4567", maxlength:"8"%>
+  </div>
+  <div>
+  都道府県<%= f.collection_select(:state_province_id, StateProvince.all, :id, :name, {}, {}) %>
+  </div>
+  <div>
+  市区町村<%= f.text_field :city, placeholder:"例) 札幌市中央区" %>
+  </div>
+  <div>
+  番地<%= f.text_field :address_line_1, placeholder:"例) 南1-2-3" %>
+  </div>
+  <div>
+  建物名<%= f.text_field :address_line_2, placeholder:"例) 北斗ビル202" %>
+  </div>
+  <div>
+  電話番号<%= f.text_field :phone_number, placeholder:"例) 08011112222", maxlength:"11" %>
+  </div>
+  <div>
+  <%= f.submit "購入" ,class:"buy-red-btn" %>
+  </div>
+<% end %>
