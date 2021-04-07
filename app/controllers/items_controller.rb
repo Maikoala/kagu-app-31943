@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   before_action :set_shop, only: [:index, :new, :create]
   before_action :set_shop_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_search, only: [:index, :search, :show]
+  before_action :set_item_column, only: [:index, :show]
+  before_action :set_category_column, only: [:index, :show]
 
   def index
     @items = @shop.items.order('created_at DESC')
@@ -41,6 +44,10 @@ class ItemsController < ApplicationController
 
   def destroy
     redirect_to action: :index if @item.destroy
+  end
+
+  def search
+    @results = @q.result.includes(:category)
   end
 
   private
