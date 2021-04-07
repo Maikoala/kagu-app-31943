@@ -1,4 +1,8 @@
-<%= @shop.name %> 
+<%= render "shared/header" %>
+
+<%= render "shared/search" %>
+
+<h1><%= @shop.name %></h1> 
 <div>
 <%= image_tag @item.image.variant(resize: '750x750') %>
 </div>

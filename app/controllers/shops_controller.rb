@@ -1,8 +1,11 @@
 class ShopsController < ApplicationController
   before_action :authenticate_owner!, only: [:new, :create]
+  before_action :set_search, only: [:index]
 
   def index
     @shops = Shop.order(:name)
+    set_item_column
+    set_category_column
   end
 
   def new
