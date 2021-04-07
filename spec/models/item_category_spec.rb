@@ -46,6 +46,18 @@ RSpec.describe ItemCategory, type: :model do
         expect(@item_category.errors.full_messages).to include 'Info is too long (maximum is 1500 characters)'
       end
 
+      it 'sizeが空だと保存できないこと' do
+        @item_category.size = nil
+        @item_category.valid?
+        expect(@item_category.errors.full_messages).to include "Size can't be blank"
+      end
+
+      it 'sizeが201文字以上だと保存できないこと' do
+        @item_category.size = '12345abcdeアイウエオあいうえお阿' * 10
+        @item_category.valid?
+        expect(@item_category.errors.full_messages).to include 'Size is too long (maximum is 200 characters)'
+      end
+
       it 'category_name_idを選択していないと保存できないこと' do
         @item_category.category_name_id = nil
         @item_category.valid?

@@ -64,6 +64,7 @@
 | -------- | ---------- | ------------------------------ |
 | name     | string     | null: false, limit: 40         |
 | info     | text       | null: false, limit: 1500       |
+| size     | string     | null: false, limit: 200        |
 | color_id | integer    | null: false                    |
 | price    | integer    | null: false                    |
 | owner    | references | null: false, foreign_key: true |

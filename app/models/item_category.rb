@@ -1,11 +1,12 @@
 class ItemCategory
   include ActiveModel::Model
-  attr_accessor :image, :name, :info, :category_name_id, :color_id, :price, :owner_id, :shop_id
+  attr_accessor :image, :name, :info, :size, :category_name_id, :color_id, :price, :owner_id, :shop_id
 
   with_options presence: true do
     validates :image
     validates :name, length: { maximum: 40 }
     validates :info, length: { maximum: 1500 }
+    validates :size, length: { maximum: 200 }
     validates :category_name_id, numericality: { message: 'select' }
     validates :color_id, numericality: { message: 'select' }
     validates :price, numericality: { only_integer: true,
@@ -30,7 +31,7 @@ class ItemCategory
   def save
     ActiveRecord::Base.transaction do
       @category.update(category_name_id: category_name_id)
-      @item.update(image: image, name: name, info: info, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
+      @item.update(image: image, name: name, info: info, size: size, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
                    category_id: @category.id)
     end
   end
@@ -48,6 +49,7 @@ class ItemCategory
       image: item.image,
       name: item.name,
       info: item.info,
+      size: item.size,
       color_id: item.color_id,
       price: item.price,
       owner_id: item.owner_id,

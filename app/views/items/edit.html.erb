@@ -21,6 +21,10 @@
     <%= form.text_area :info %>
   </div>
   <div>
+    <%= form.label :size, 'サイズ' %>
+    <%= form.text_area :size %>
+  </div>
+  <div>
     <%= form.label :category_name_id, 'カテゴリー' %>
     <%= form.collection_select(:category_name_id, CategoryName.all, :id, :name, {include_blank: "--"}, {}) %>
   </div>
