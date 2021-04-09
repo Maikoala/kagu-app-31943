@@ -53,7 +53,8 @@ class ItemCategory
       color_id: item.color_id,
       price: item.price,
       owner_id: item.owner_id,
-      shop_id: item.shop_id
+      shop_id: item.shop_id,
+      category_name_id: item.category && item.category.category_name_id
     }
   end
 end
