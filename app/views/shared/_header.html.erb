@@ -10,22 +10,18 @@
           <li class='log-in'><%= link_to current_user.nickname, "#" %></li> 
           <li class='log-in'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
         <% else %>
-          <div class='owner-login'>
-          <%= link_to new_owner_session_path do %>
-            <li class='log-in'>オーナーログイン</li>
+          <%= link_to new_owner_session_path, class: 'log-in' do %>
+            <li class= 'log-in-text'>オーナーログイン</li>
           <% end %>
-          <%= link_to new_owner_registration_path do %>
-            <li class='log-in'>オーナー新規登録</li>
+          <%= link_to new_owner_registration_path, class: 'log-in' do %>
+            <li class='log-in-text'>オーナー新規登録</li>
           <% end %>
-          </div>
-          <div class=user-login>
-          <%= link_to new_user_session_path do %>
-            <li class='log-in'>ユーザーログイン</li>
+          <%= link_to new_user_session_path, class: 'log-in' do %>
+            <li class='log-in-text'>ユーザーログイン</li>
           <% end %>
-          <%= link_to new_user_registration_path do %>
-            <li class='log-in'>ユーザー新規登録</li>
+          <%= link_to new_user_registration_path, class: 'log-in' do %>
+            <li class='log-in-text'>ユーザー新規登録</li>
           <% end %>
-          </div>
         <% end %>
       </ul>
     </nav>

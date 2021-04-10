@@ -11,17 +11,18 @@
   flex-direction: row-reverse;
 }
 
-.owner-login {
-  display: flex;
-}
-
-.user-login {
-  display: flex;
-}
-
 .log-in {
-  border-width: medium;
+  width: 140px;
+  height: 40px;
+  border-width: 4px;
   border-style: solid;
   margin: 0px 5px;
-  padding: 2px;
+  display: table;
+}
+
+.log-in-text {
+  font-size: 14px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
