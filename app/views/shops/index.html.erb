@@ -1,9 +1,13 @@
 <%= render "shared/header" %>
 
-<%= render "shared/search" %>
 
-<h2>shop一覧</h2>
-<ul>
+  <div class=top-search id=top-page-search>
+  商品検索
+  </div>
+  <%= render "shared/search" %>
+
+  <h2>shop一覧</h2>
+  <ul>
   <% if @shops.present? %>
     <% @shops.each do |shop| %>
       <li>
@@ -13,4 +17,4 @@
   <% else %>
     shopを登録してください
   <% end %>
-</ul>
+  </ul>
