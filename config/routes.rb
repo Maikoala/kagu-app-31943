@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'owners/show'
   get 'items/index'
   get 'shops/index'
   devise_for :owners, controllers: {
@@ -23,4 +24,6 @@ Rails.application.routes.draw do
     end
     resources :orders, only: [:index, :create]
   end
+
+  resources :owners, only: [:show]
 end

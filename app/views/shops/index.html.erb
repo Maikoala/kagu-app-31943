@@ -1,20 +1,41 @@
 <%= render "shared/header" %>
 
-<%= render "shared/search" %>
+<div class='top-title'>
+  <h1 class='title'>
+  <%= link_to 'KGY -KaGuYa-', root_path %>
+  </h1>
+</div>
 
-<h2>shop一覧</h2>
-<ul>
-  <% if @shops.present? %>
-    <% @shops.each do |shop| %>
-      <li>
-        <%= link_to shop.name, shop_items_path(shop.id) %>
-      </li>
+<div class='top-main'>
+  <%= image_tag 'desk_1.jpg', alt: 'desk画像', class: 'left_one_top' %>
+
+  <%= image_tag 'chair_1.jpg', alt: 'chair画像', class: 'left_two_top' %>
+
+  <%= image_tag 'sofa_1.jpg', alt: 'sofa画像', class: 'left_bottom' %>
+
+  <%= image_tag 'bed_1.jpg', alt: 'bed画像', class: 'right-top' %>
+
+  <%= image_tag 'lighting_1.jpg', alt: 'lighting画像', class: 'right-bottom' %>
+
+  <div class='top-info'>
+    <div class='top-search' id='top-page-search'>
+    商品検索
+    </div>
+    <%= render "shared/search" %>
+
+    <div class='top-shop' id='top-shops'>
+    shop一覧
+    </div>
+    <ul class='shop-list hidden' id='top-shop-list'>
+    <% if @shops.present? %>
+      <% @shops.each do |shop| %>
+        <li>
+          <%= link_to shop.name, shop_items_path(shop.id) %>
+        </li>
+      <% end %>
+    <% else %>
+      shopを登録してください
     <% end %>
-  <% else %>
-    shopを登録してください
-  <% end %>
-</ul>
-
-<% if owner_signed_in? %>
-  <%= link_to "Shop登録", new_shop_path %>
-<% end %>
+    </ul>
+  </div>
+</div>
