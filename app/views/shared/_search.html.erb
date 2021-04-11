@@ -1,22 +1,37 @@
-<%= search_form_for @q, url: search_items_path, class: 'search-form hidden', id: 'item-search-form' do |f| %>
-  <%= f.label :name_or_shop_name_i_cont, 'キーワード検索' %>
-  <%= f.search_field :name_or_shop_name_i_cont %>
-  <br>
-  <label>ショップ名</label>
-  <% @item_shop.each do |shop| %>
-    <%= f.check_box :shop_id_eq_any, { multiple: true, checked: false, disabled: false, include_hidden: false }, shop[:id] %>
-    <%= f.label :shop_id_eq, shop.name %>
-  <% end %>
-  <br>
-  <%= f.label :category_category_name_id_eq, 'カテゴリー' %>
-  <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :color_id_eq, 'カラー' %>
-  <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :price, '価格' %>
-  <%= f.number_field :price_gteq %>円〜
-  <%= f.number_field :price_lt %>円
-  <br>
-  <%= f.submit '検索'%>
+<%= search_form_for @q, url: search_items_path, class: 'search-form', id: 'item-search-form' do |f| %>
+  <div class='form'>
+    <%= f.label :name_or_shop_name_i_cont, 'キーワード検索' %>
+    <br>
+    <%= f.search_field :name_or_shop_name_i_cont %>
+  </div>
+  <div class='bottom-form' id='shops'>
+    <label class='search-shop-name'>ショップ名</label>
+    <ul class='search-shops hidden', id="shop-list">
+      <li>
+      <% @item_shop.each do |shop| %>
+        <%= f.check_box :shop_id_eq_any, { multiple: true, checked: false, disabled: false, include_hidden: false }, shop[:id] %>
+        <%= f.label :shop_id_eq, shop.name %>
+      <% end %>
+      </li>
+    </ul>
+  </div>
+  <div class='form'>
+    <%= f.label :category_category_name_id_eq, 'カテゴリー' %>
+    <br>
+    <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
+  </div>
+  <div class='form'>  
+    <%= f.label :color_id_eq, 'カラー' %>
+    <br>
+    <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
+  </div>
+  <div class='form'>
+    <%= f.label :price, '価格' %>
+    <br>
+    <%= f.number_field :price_gteq %>円〜
+    <%= f.number_field :price_lt %>円
+  </div>
+  <div class='bottom-form'>
+    <%= f.submit '検索', class: 'submit' %>
+  </div>
 <% end %>
