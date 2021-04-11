@@ -1,17 +1,17 @@
 function shop () {
-  const topShop = document.getElementById("top-shops");
-  const topShopList = document.getElementById("top-shop-list");
-  topShop.addEventListener('mouseover', () => {
-    topShop.setAttribute("style", "color: #de4d4d;");
+  const Shop = document.getElementById("shops");
+  const ShopList = document.getElementById("shop-list");
+  Shop.addEventListener('mouseover', () => {
+    Shop.setAttribute("style", "color: #de4d4d;");
   });
-  topShop.addEventListener('mouseout', () => {
-    topShop.removeAttribute("style", "color: #de4d4d;");
+  Shop.addEventListener('mouseout', () => {
+    Shop.removeAttribute("style", "color: #de4d4d;");
   });
-  topShop.addEventListener('click', () => {
-    if (topShopList.getAttribute("style") == "display: block;"){
-    topShopList.removeAttribute("style", "display: block;");
+  Shop.addEventListener('click', () => {
+    if (ShopList.getAttribute("style") == "display: block;"){
+    ShopList.removeAttribute("style", "display: block;");
     }else{
-    topShopList.setAttribute("style", "display: block;");
+    ShopList.setAttribute("style", "display: block;");
     };
   });
 }

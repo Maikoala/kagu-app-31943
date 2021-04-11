@@ -1,0 +1,26 @@
+.search-form {
+  width: 100vw;
+  height: 5vh;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.form {
+  flex-wrap: wrap;
+}
+
+.bottom-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.search-shop-name {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}

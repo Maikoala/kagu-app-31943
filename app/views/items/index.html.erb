@@ -1,27 +1,41 @@
+<%= render "shared/title_header" %>
+
 <%= render "shared/header" %>
 
 <%= render "shared/search" %>
 
-<h1><%= @shop.name %></h1>
-<h2>商品一覧</h2>
-
-<% if current_owner == @shop.owner %>
-  <%= link_to '出品する', new_shop_item_path %>
-<% end%>
-
-<div>
-<% if @items.present? %>
-  <% @items.each do |item| %>
-    <%= link_to shop_item_path(@shop.id, item.id), method: :get do %>
-      <%= image_tag item.image.variant(resize: '400x400') %>
-      <div>
-      <%= item.name %>
-      </div>
+<div class='shop-title'>
+  <h2 class='shop-name'><%= @shop.name %></h2>
+  <% if current_owner == @shop.owner %>
+    <%= link_to new_shop_item_path, class: 'display' do%>
+      出品する
     <% end %>
   <% end %>
-<% elsif current_owner == @shop.owner %>
-  商品を出品してください
-<% else %>
-  商品はありません
-<% end %>
+</div>
+<div class='shop-info'>
+  <%= @shop.info %>
+</div>
+
+<div class='shop-item-lists'>
+  <ul class='item-lists'>
+    <% if @items.present? %>
+      <% @items.each do |item| %>
+        <li class='list'>
+          <%= link_to shop_item_path(@shop.id, item.id), method: :get, class: 'shop-item' do %>
+            <%= image_tag item.image, class: 'shop-item-img' %>
+            <div class='shop-item-info'>
+              <h4 class='shop-item-name'><%= item.name %></h4>
+              <div class='shop-item-price'>
+                ¥<%= item.price %>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    <% elsif current_owner == @shop.owner %>
+      商品を出品してください
+    <% else %>
+      商品はありません
+    <% end %>
+  </ul>
 </div>
