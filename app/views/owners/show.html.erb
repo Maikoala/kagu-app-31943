@@ -1,2 +1,9 @@
-<%= link_to "Shop登録", new_shop_path %>
 <%= link_to "オーナー情報編集", "#" %>
+
+<div>
+<% if @shop.present? %>
+  <%= link_to "#{@shop.name}に出品する", new_shop_item_path(@shop.id) %>
+<% else %>
+  <%= link_to "Shop登録", new_shop_path %>
+<% end %>
+</div>

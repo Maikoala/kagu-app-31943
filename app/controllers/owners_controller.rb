@@ -3,6 +3,7 @@ class OwnersController < ApplicationController
   before_action :move_to_index, only: [:show]
 
   def show
+    @shop = current_owner.shop
   end
 
   def move_to_index
