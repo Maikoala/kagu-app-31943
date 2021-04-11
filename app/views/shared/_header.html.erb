@@ -2,25 +2,27 @@
   <nav>
     <ul class='owner-user-login'>
         <% if owner_signed_in? %>
-          <%= link_to owner_path(current_owner.id) do %>
-          <li class='log-in'><%= current_owner.account_name %></li> 
+          <li class='name'><%= link_to current_owner.account_name, owner_path(current_owner.id) %></li>
+          <%= link_to destroy_owner_session_path, method: :delete, class: 'log-in' do %>
+            <li class='log-in-text'> ログアウト</li>
           <% end %>
-          <li class='log-in'><%= link_to 'ログアウト', destroy_owner_session_path, method: :delete %> </li>
-        <% elsif user_signed_in? %>
-          <li class='log-in'><%= link_to current_user.nickname, "#" %></li> 
-          <li class='log-in'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
+        <% elsif  user_signed_in?%>
+          <li class='name'><%= link_to current_user.nickname, "#" %></li> 
+          <%= link_to destroy_user_session_path, method: :delete, class: "log-in" do %> 
+            <li class='log-in-text'>ログアウト</li>
+          <% end %>
         <% else %>
-          <%= link_to new_owner_session_path, class: 'log-in' do %>
-            <li class= 'log-in-text'>オーナーログイン</li>
-          <% end %>
-          <%= link_to new_owner_registration_path, class: 'log-in' do %>
-            <li class='log-in-text'>オーナー新規登録</li>
-          <% end %>
           <%= link_to new_user_session_path, class: 'log-in' do %>
             <li class='log-in-text'>ユーザーログイン</li>
           <% end %>
           <%= link_to new_user_registration_path, class: 'log-in' do %>
             <li class='log-in-text'>ユーザー新規登録</li>
+          <% end %>
+          <%= link_to new_owner_session_path, class: 'log-in' do %>
+            <li class= 'log-in-text'>オーナーログイン</li>
+          <% end %>
+          <%= link_to new_owner_registration_path, class: 'log-in' do %>
+            <li class='log-in-text'>オーナー新規登録</li>
           <% end %>
         <% end %>
       </ul>
