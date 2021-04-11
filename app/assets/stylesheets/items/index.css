@@ -14,11 +14,11 @@
   width: 10vw;
   margin-left: 5vw;
   font-size: 1.3em;
-  border-radius:25px;
+  border-radius: 25px;
   border-width: 4px;
   border-style: solid;
-  text-align:center;
-  text-decoration:none;
+  text-align: center;
+  text-decoration: none;
 }
 
 .shop-info {
@@ -43,6 +43,10 @@
 .item-lists>.list {
   width: 37vh;
   padding: 1vw;
+}
+
+.shop-item {
+  text-decoration: none;
 }
 
 .shop-item-img {

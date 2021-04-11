@@ -21,7 +21,7 @@
     <% if @items.present? %>
       <% @items.each do |item| %>
         <li class='list'>
-          <%= link_to shop_item_path(@shop.id, item.id), method: :get do %>
+          <%= link_to shop_item_path(@shop.id, item.id), method: :get, class: 'shop-item' do %>
             <%= image_tag item.image, class: 'shop-item-img' %>
             <div class='shop-item-info'>
               <h4 class='shop-item-name'><%= item.name %></h4>
