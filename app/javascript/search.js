@@ -1,19 +1,19 @@
-function search () {
-  const topPageSearch = document.getElementById("top-page-search");
-  const searchForm = document.getElementById("item-search-form");
-  topPageSearch.addEventListener('mouseover', () => {
-    topPageSearch.setAttribute("style", "color: #de4d4d;");
+function shop () {
+  const Shop = document.getElementById("form-shops");
+  const ShopList = document.getElementById("form-shop-list");
+  Shop.addEventListener('mouseover', () => {
+    Shop.setAttribute("style", "color: #de4d4d;");
   });
-  topPageSearch.addEventListener('mouseout', () => {
-    topPageSearch.removeAttribute("style", "color: #de4d4d;");
+  Shop.addEventListener('mouseout', () => {
+    Shop.removeAttribute("style", "color: #de4d4d;");
   });
-  topPageSearch.addEventListener('click', () => {
-    if (searchForm.getAttribute("style") == "display: block;"){
-    searchForm.removeAttribute("style", "display: block;");
+  Shop.addEventListener('click', () => {
+    if (ShopList.getAttribute("style") == "display: block;"){
+    ShopList.removeAttribute("style", "display: block;");
     }else{
-    searchForm.setAttribute("style", "display: block;");
+    ShopList.setAttribute("style", "display: block;");
     };
   });
 }
 
-window.addEventListener('load', search);
+window.addEventListener('load', shop);

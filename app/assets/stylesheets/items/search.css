@@ -1,0 +1,21 @@
+.search-main {
+  width: 100vw;
+}
+
+.search-list-title {
+  margin-left: 4vw;
+  margin-top: 2vh;
+  font-size: 2em;
+}
+
+.list-item-name{
+  font-size: 1.2em;
+}
+
+.list-shop-name{
+  font-size: 0.7em;
+}
+
+.list-item-price{
+  font-size: 1.2em;
+}

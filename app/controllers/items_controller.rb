@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   before_action :set_shop_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_search, only: [:index, :search, :show]
-  before_action :set_item_column, only: [:index, :show]
-  before_action :set_category_column, only: [:index, :show]
+  before_action :set_item_column, only: [:index, :show, :search]
+  before_action :set_category_column, only: [:index, :show, :search]
 
   def index
     @items = @shop.items.order('created_at DESC')
