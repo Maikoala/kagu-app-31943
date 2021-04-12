@@ -5,50 +5,56 @@
   align-items: flex-start;
 }
 
+.title {
+  font-size: 1.3em;
+  font-weight: bolder;
+  text-decoration: none;  
+}
+
 .top-main {
   position: relative;
 }
 
 .left_one_top {
   height: 22vh;
-  width: 19vw;
+  width: 18.25vw;
   position: absolute;
   margin: 2vh 5vw 7.5vh 6vw;
 }
 
 .left_two_top{
   height: 22vh;
-  width: 19vw;
+  width: 18.25vw;
   position: absolute;
-  margin: 2vh 5vw 7.5vh 30vw;
+  margin: 2vh 5vw 7.5vh 29.25vw;
 }
 
 .left_bottom{
-  height: 52.5vh;
-  width:  43vw;
+  height: 51.5vh;
+  width:  41.5vw;
   position: absolute;
-  margin: 29.5vh 5vw 4vh 6vw;
+  margin: 30.5vh 5vw 4vh 6vw;
 }
 
 .right-top{
   height: 37vh;
-  width: 40vw;
+  width: 41.5vw;
   position: absolute;
-  margin: 2vh 6vw 7.5vh 54vw;
+  margin: 2vh 6vw 7.5vh 52.5vw;
 }
 
 .right-bottom{
   height: 36.5vh;
   width: 25vw;
   position: absolute;
-  margin: 45.5vh 5vw 4vh 54vw;
+  margin: 45.5vh 5vw 4vh 52.5vw;
 }
 
 .top-info{
   position: absolute;
   height: 36.5vh;
-  width: 24vw;
-  margin: 45.5vh 6vw 4vh 84vw;
+  width: 11.5vw;
+  margin: 45.5vh 6vw 4vh 82.5vw;
   font-size: 1.5em;
 }
 

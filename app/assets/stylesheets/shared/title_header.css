@@ -1,0 +1,10 @@
+.header-title {
+  width: 100vw;
+  height: 3vh;
+}
+
+.header-shop-name {
+  margin-left: 3vw;
+  font-size: 1.5em;
+  text-decoration: none;
+}

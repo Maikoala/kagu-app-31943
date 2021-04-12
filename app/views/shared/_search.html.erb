@@ -4,9 +4,9 @@
     <br>
     <%= f.search_field :name_or_shop_name_i_cont %>
   </div>
-  <div class='bottom-form' id='shops'>
+  <div class='bottom-form' id='form-shops'>
     <label class='search-shop-name'>ショップ名</label>
-    <ul class='search-shops hidden', id="shop-list">
+    <ul class='search-shops hidden', id="form-shop-list">
       <li>
       <% @item_shop.each do |shop| %>
         <%= f.check_box :shop_id_eq_any, { multiple: true, checked: false, disabled: false, include_hidden: false }, shop[:id] %>
