@@ -10,7 +10,7 @@ class CategoryName < ActiveHash::Base
     { id: 8, name: '本棚、シェルフ、収納家具' },
     { id: 9, name: 'ラグ、カーペット' },
     { id: 10, name: '照明' },
-    { id: 11, name: 'キッチン収納' },
+    { id: 11, name: 'キッチン収納、ダイニングテーブル' },
     { id: 12, name: '調理家具、食器' },
     { id: 13, name: '洗濯用品、掃除グッズ' },
     { id: 14, name: 'トイレ用品、バス用品' },
