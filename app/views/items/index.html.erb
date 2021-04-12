@@ -5,7 +5,7 @@
 <%= render "shared/search" %>
 
 <div class='shop-title'>
-  <h2 class='shop-name'><%= @shop.name %></h2>
+  <%=link_to @shop.name, shop_items_path(@shop.id), class: 'shop-name' %>
   <% if current_owner == @shop.owner %>
     <%= link_to new_shop_item_path, class: 'display' do%>
       出品する

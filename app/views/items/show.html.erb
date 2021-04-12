@@ -1,37 +1,55 @@
+<%= render "shared/title_header" %>
+
 <%= render "shared/header" %>
 
 <%= render "shared/search" %>
 
-<h1><%= @shop.name %></h1> 
-<div>
-<%= image_tag @item.image.variant(resize: '750x750') %>
-</div>
-<div>
-<h2><%= @item.name %></h2>
-</div>
-<div>
-  <% if owner_signed_in? && current_owner == @shop.owner %>
-    <%= link_to '編集', edit_shop_item_path(@shop.id, @item.id) %>
-    <%= link_to '削除', shop_item_path(@shop.id, @item.id), method: :delete %>
-  <% end %>
-</div>
-<div>
-  <% if user_signed_in? %>
-    <%= link_to '購入', item_orders_path(@item.id) %>
-  <% end %>
-<div>
-カテゴリー：<%= @item.category.category_name.name %>
-</div>
-<br>
-<div>
-カラー：<%= @item.color.name %>
-</div>
-<div>
-<h2>¥<%= @item.price %></h2>
-</div>
-<div>
-<%= @item.info %>
-</div>
-<div>
-<%= @item.size %>
+<div class='item-main'>
+  <div class='main-shop-name'>
+    <%=link_to @shop.name, shop_items_path(@shop.id), class: 'item-shop-name' %>
+  </div>
+  <div class='item-image-lists'>
+    <%= image_tag @item.image, class: 'item-img' %>
+  </div>
+  <div class='item-info'>
+    <p class='item-name'><%= @item.name %></p>
+    <div class='category'>
+      カテゴリー<span class='color-category'><%= @item.category.category_name.name %></span>
+    </div>
+    <div class='color'>
+      カラー<span class='color-category'><%= @item.color.name %></span>
+    </div>
+  </div>
+  <div class='button'>
+    <div class='display-item-price'>
+      <h2 class='item-price'>¥<%= @item.price %></h2>
+    </div>
+    <div class='owner-edit'>
+      <% if owner_signed_in? && current_owner == @shop.owner %>
+        <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-button' do%>
+          編集
+        <% end %>
+        <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'delete-button' do%>
+          削除
+        <% end %>
+      <% end %>
+    </div>
+    <div class='user-buying'>
+      <% if user_signed_in? %>
+        <%= link_to item_orders_path(@item.id), class:'buying-button' do %>
+          購入
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='info-size'>
+    <div class='info'>
+      <h3 class='item-info-title'>＜ アイテム説明 ＞</h3>
+      <%= @item.info %>
+    </div>
+    <div class='size'>
+      <h3 class='item-info-title'>＜ サイズ ＞</h3>
+      <%= @item.size %>
+    </div>
+  </div>
 </div>
