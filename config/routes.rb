@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   get 'owners/show'
   get 'items/index'
   get 'shops/index'
@@ -26,4 +27,5 @@ Rails.application.routes.draw do
   end
 
   resources :owners, only: [:show]
+  resources :users, only: [:show]
 end

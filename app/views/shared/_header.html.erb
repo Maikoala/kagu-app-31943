@@ -10,7 +10,7 @@
           <% end %>
         <% elsif  user_signed_in?%>
           <li class='name'>
-            <%= link_to "#{current_user.nickname}さん", "#", class: 'owner-user-name' %>
+            <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: 'owner-user-name' %>
           </li> 
           <%= link_to destroy_user_session_path, method: :delete, class: "log-in" do %> 
             <li class='log-in-text'>ログアウト</li>
