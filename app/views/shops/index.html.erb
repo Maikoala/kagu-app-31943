@@ -16,14 +16,14 @@
   <%= image_tag 'bed_13.jpeg', alt: 'Bed画像', class: 'right-bottom' %>
 
   <div class='top-info'>
-    <div class='top-search' id='top-page-search'>
+    <h3 class='top-search' id='top-page-search'>
     商品検索
-    </div>
+    </h3>
     <%= render "shared/top_search" %>
 
-    <div class='top-shop' id='shops'>
+    <h3 class='top-shop' id='shops'>
     shop一覧
-    </div>
+    </h3>
     <ul class='shop-list hidden' id='shop-list'>
     <% if @shops.present? %>
       <% @shops.each do |shop| %>

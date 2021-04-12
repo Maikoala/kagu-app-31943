@@ -46,11 +46,11 @@
   padding: 1vw;
 }
 
-.shop-item {
+.list-item {
   text-decoration: none;
 }
 
-.shop-item-img {
+.list-item-img {
   width: 35vh;
   height: 32vh;
 }
