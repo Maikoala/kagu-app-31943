@@ -30,7 +30,8 @@
 .log-in {
   width: 9vw;
   height: 5vh;
-  margin: 0px 2px 0px 6px;
+  margin-right: 2px;
+  margin-left: 6px;
   display: table;
   text-decoration: none;
 }

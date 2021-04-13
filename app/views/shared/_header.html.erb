@@ -6,7 +6,7 @@
             <%= link_to "#{current_owner.account_name}さん", owner_path(current_owner.id), class: 'owner-user-name' %>
           </li>
           <%= link_to destroy_owner_session_path, method: :delete, class: 'log-in' do %>
-            <li class='log-in-text'> ログアウト</li>
+            <li class='log-in-text log-out'> ログアウト</li>
           <% end %>
         <% elsif  user_signed_in?%>
           <li class='name'>
