@@ -1,3 +1,7 @@
+.item-main {
+  width: 100vw;
+}
+
 .main-shop-name {
   margin-top: 1em;
 }
@@ -6,6 +10,8 @@
   font-size: 1.2em;
   margin-left: 4vw;
   text-decoration: none;
+  color: #000;
+  font-weight: bold;
 }
 
 .item-image-lists {
@@ -126,11 +132,13 @@
 .info {
   width: 60vw;
   margin: 1vh 6vw 0 7vw;
+  overflow: scroll;
 }
 
 .size {
   width: 20vw;
   margin: 1vh 7vw 0 6vw;
+  overflow: scroll;
 }
 
 .item-info-title {
