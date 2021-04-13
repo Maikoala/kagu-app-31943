@@ -13,20 +13,20 @@
             <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: 'owner-user-name' %>
           </li> 
           <%= link_to destroy_user_session_path, method: :delete, class: "log-in" do %> 
-            <li class='log-in-text'>ログアウト</li>
+            <li class='log-in-text log-out'>ログアウト</li>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, class: 'log-in' do %>
-            <li class='log-in-text'>ユーザーログイン</li>
+            <li class='log-in-text head-user'>ユーザーログイン</li>
           <% end %>
           <%= link_to new_user_registration_path, class: 'log-in' do %>
-            <li class='log-in-text'>ユーザー新規登録</li>
+            <li class='log-in-text head-user'>ユーザー新規登録</li>
           <% end %>
           <%= link_to new_owner_session_path, class: 'log-in' do %>
-            <li class= 'log-in-text'>オーナーログイン</li>
+            <li class= 'log-in-text head-owner'>オーナーログイン</li>
           <% end %>
           <%= link_to new_owner_registration_path, class: 'log-in' do %>
-            <li class='log-in-text'>オーナー新規登録</li>
+            <li class='log-in-text head-owner'>オーナー新規登録</li>
           <% end %>
         <% end %>
       </ul>

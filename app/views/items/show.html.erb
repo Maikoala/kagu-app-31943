@@ -26,10 +26,10 @@
     </div>
     <div class='owner-edit'>
       <% if owner_signed_in? && current_owner == @shop.owner %>
-        <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-button' do%>
+        <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-delete-button edit-button' do%>
           編集
         <% end %>
-        <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'delete-button' do%>
+        <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'edit-delete-button delete-button' do%>
           削除
         <% end %>
       <% end %>

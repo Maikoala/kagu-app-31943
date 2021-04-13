@@ -5,6 +5,9 @@
 
 .header-shop-name {
   margin-left: 3vw;
-  font-size: 1.5em;
+  margin-top: 1vh;
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
   text-decoration: none;
 }

@@ -18,19 +18,19 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin: 0px 5px;
+  margin: 0px 1vw;
 }
 
 .owner-user-name {
-  font-size: 1.1em;
+  font-size: 1.2em;
+  color: #000;
+  text-decoration: underline  #b50099 5px;
 }
 
 .log-in {
   width: 9vw;
   height: 5vh;
   margin: 0px 2px 0px 6px;
-  border-width: 4px;
-  border-style: solid;
   display: table;
   text-decoration: none;
 }
@@ -40,4 +40,24 @@
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.head-user {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #d2d200;
+}
+
+.head-owner {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #00a5dd;
+}
+
+.log-out {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #00a096;
 }
