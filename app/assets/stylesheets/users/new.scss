@@ -1,68 +1,7 @@
-.user-registration-background {
-  background-color: rgb(150, 151, 151);
+.user-registration-back {
   background-image: image-url("registration_10.jpeg");
-  background-size: cover;
 }
 
-.user-registration-form {
-  width: 45vw;
+.user-registration {
   background-color:rgb(216, 213, 209);
-  border: none;
-  border-radius: 25px;
-  padding: 3%;
-  overflow: scroll;
-}
-
-.user-input-default {
-  width: 100%;
-  margin-top: 2vh;
-  height: 6vh;
-  padding: 2% 5%;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 1em;
-  resize: none;
-}
-
-.user-input-name {
-  width: 40%;
-  margin: 2vh auto;
-  height: 7vh;
-  padding: 3% 2%;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 1em;
-  resize: none;
-}
-
-.user-select-box {
-  width: 45%;
-  margin-top: 2vh;
-  height: 5vh;
-  padding-left: 1vw;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 0.9em;
-  cursor: pointer;
-}
-
-.user-input-birth {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-}
-
-.user-input-birth select {
-  width: 15%;
-  margin-top: 2vh;
-  height: 5vh;
-  padding-left: 1vw;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 0.9em;
-  cursor: pointer;
 }
