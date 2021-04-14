@@ -1,9 +1,10 @@
 .top-page-header {
   width: 100vw;
-  height: 7vh;
+  height: 5vh;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  padding: 0;
 }
 
 .owner-user-login {
@@ -17,7 +18,7 @@
   width: 20vw;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-start;
   margin: 0px 1vw;
 }
 

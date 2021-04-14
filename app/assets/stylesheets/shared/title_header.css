@@ -1,11 +1,15 @@
 .header-title {
   width: 100vw;
-  height: 2.5vh;
+  height: 6vh;
+  margin: 0;
+  padding: 0;
 }
 
 .header-shop-name {
   margin-left: 3vw;
   margin-top: 1vh;
+  margin-bottom: 0;
+  padding: 0;
   font-size: 2em;
   font-weight: bold;
   color: #000;
