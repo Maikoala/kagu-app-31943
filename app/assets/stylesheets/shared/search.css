@@ -1,4 +1,4 @@
-.search-form {
+.header-search-form {
   width: 100vw;
   height: 7.5vh;
   font-size: 1em;
@@ -7,7 +7,7 @@
   align-items: flex-end;
 }
 
-.form {
+.search-form {
   flex-wrap: wrap;
 }
 
@@ -19,6 +19,7 @@
 
 .search-shop-name {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .hidden {
