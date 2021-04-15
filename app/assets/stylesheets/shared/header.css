@@ -4,7 +4,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 0;
+  padding-top: 0;
+  margin-top: 1vh;
 }
 
 .owner-user-login {
@@ -47,19 +48,13 @@
 }
 
 .head-user {
-  border-width: 4px;
-  border-style: solid;
-  border-color: #d2d200;
+  border: solid 5px #d2d200;
 }
 
 .head-owner {
-  border-width: 4px;
-  border-style: solid;
-  border-color: #00a5dd;
+  border: solid 5px #00a5dd;
 }
 
 .log-out {
-  border-width: 4px;
-  border-style: solid;
-  border-color: #00a096;
+  border: solid 5px #00a096;
 }
