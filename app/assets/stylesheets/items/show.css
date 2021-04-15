@@ -59,7 +59,7 @@
 
 .button {
   width: 100vw;
-  height: 6vh;
+  height: 7vh;
   display: flex;
   align-items: center;
 }
@@ -74,53 +74,53 @@
 }
 
 .owner-edit {
-  margin-left: 6em;
   display: flex;
-  align-content: center;
 }
 
 .edit-delete-button {
-  width: 8vw;
+  width: 7vw;
   height: 6vh;
-  border: solid;
-  border-radius: 100%;
-  font-size: 1.5em;
+  display: table;
   text-decoration: none;
   text-align: center;
-  padding: 3px 5px
+  border: solid 6px;
+  font-size: 1.6em;
+  text-decoration: none;
+  margin-left: 5em;
 }
 
 .edit-button {
-  background-color: #4699ca;
+  background-color: #000;
   border-color: #4699ca;
   color: #fff;
 }
 
 .delete-button {
-  margin-left: 3vw;
-  background-color: #660000;
-  border-color: #660000;
+  background-color: #000;
+  border-color: #ffbf1f;
   color: #fff;
 }
 
+.edit-delete-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .user-buying {
-  display: flex;
-  align-items: center;
+  display: table;
+  text-decoration: none;
 }
 
 .buying-button {
   width: 7vw;
-  height: 7vh;
-  border: solid;
-  border-radius: 100%;
+  height: 6vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border: solid #cc0000 6px;
   font-size: 1.6em;
   text-decoration: none;
-  text-align: center;
-  margin-left: 3vw;
-  margin-top: 1.5vh;
-  padding: 4px 5px;
-  background-color: #cc0000;
-  border-color: #cc0000;
+  background-color: #000;
   color: #fff;
 }
 

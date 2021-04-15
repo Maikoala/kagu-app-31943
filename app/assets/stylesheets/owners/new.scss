@@ -128,12 +128,15 @@
   margin: 5vh auto 0;
 }
 
-.registration-button {
+.submit-button {
   width: 100%;
-  background: #c43333;
-  border: 1px solid #c43333;
+  background: rgb(70, 70, 70);
   color: #fff;
   height: 7vh;
   font-size: 1em;
   cursor: pointer;
+}
+
+.owner-registration-btn {
+  border: 6px solid #00a5dd;
 }

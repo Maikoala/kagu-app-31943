@@ -12,8 +12,6 @@
   padding: 10vh auto;
 }
 
-/* 出品画像 */
-
 .click-upload {
   margin: 2% 0;
   min-width: 250px;
@@ -47,9 +45,6 @@
 .input-size {
   height: 20vh;
 }
-
-
-/*商品価格*/
 
 .price-form {
   width: 100%;
@@ -89,3 +84,6 @@
   text-align: right;
 }
 
+.item-registration-btn {
+  border: 6px solid #cc0000;
+}
