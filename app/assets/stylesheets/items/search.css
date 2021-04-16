@@ -1,5 +1,12 @@
+.search-result {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 .search-main {
   width: 100vw;
+  flex: 1;
 }
 
 .search-list-title {

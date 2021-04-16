@@ -1,43 +1,45 @@
-<%= render "shared/header" %>
+<div class='app-top-page'>
+  <%= render "shared/header" %>
 
-<div class='top-page'>
-  <div class='top-title'>
-    <%= link_to 'KGY -KaGuYa-', root_path, class: 'title' %>
-  </div>
+  <div class='top-page'>
+    <div class='top-title'>
+      <%= link_to 'KGY -KaGuYa-', root_path, class: 'title' %>
+    </div>
 
-  <div class='top-main'>
-    <%= image_tag 'desk_5.jpeg', alt: 'Desk画像', class: 'left_one_top' %>
+    <div class='top-main'>
+      <%= image_tag 'desk_5.jpeg', alt: 'Desk画像', class: 'left_one_top' %>
 
-    <%= image_tag 'flower_vase_1.jpeg', alt: 'Flower Vase画像', class: 'left_two_top' %>
+      <%= image_tag 'flower_vase_1.jpeg', alt: 'Flower Vase画像', class: 'left_two_top' %>
 
-    <%= image_tag 'sofa_1.jpeg', alt: 'Sofa画像', class: 'left_bottom' %>
+      <%= image_tag 'sofa_1.jpeg', alt: 'Sofa画像', class: 'left_bottom' %>
 
-    <%= image_tag 'chair_2.jpeg', alt: 'Chair画像', class: 'right-top' %>
+      <%= image_tag 'chair_2.jpeg', alt: 'Chair画像', class: 'right-top' %>
 
-    <%= image_tag 'bed_13.jpeg', alt: 'Bed画像', class: 'right-bottom' %>
+      <%= image_tag 'bed_13.jpeg', alt: 'Bed画像', class: 'right-bottom' %>
 
-    <div class='top-info'>
-      <h3 class='top-search' id='top-page-search'>
-      商品検索
-      </h3>
-      <%= render "shared/top_search" %>
+      <div class='top-info'>
+        <h3 class='top-search' id='top-page-search'>
+        商品検索
+        </h3>
+        <%= render "shared/top_search" %>
 
-      <h3 class='top-shop' id='shops'>
-      shop一覧
-      </h3>
-      <ul class='shop-list hidden' id='shop-list'>
-        <% if @shops.present? %>
-          <% @shops.each do |shop| %>
-            <li>
-              <%= link_to shop.name, shop_items_path(shop.id) %>
-            </li>
+        <h3 class='top-shop' id='shops'>
+          shop一覧
+        </h3>
+        <ul class='shop-list hidden' id='shop-list'>
+          <% if @shops.present? %>
+            <% @shops.each do |shop| %>
+              <li>
+                <%= link_to shop.name, shop_items_path(shop.id) %>
+              </li>
+            <% end %>
+          <% else %>
+            shopを登録してください
           <% end %>
-        <% else %>
-          shopを登録してください
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<%= render "shared/footer" %>
+  <%= render "shared/footer" %>
+</div>

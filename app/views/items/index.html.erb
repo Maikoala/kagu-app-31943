@@ -1,43 +1,47 @@
-<%= render "shared/title_header" %>
+<div class='shop-top-page'>
+  <%= render "shared/title_header" %>
 
-<%= render "shared/header" %>
+  <%= render "shared/header" %>
 
-<%= render "shared/search" %>
+  <%= render "shared/search" %>
 
-<div class='shop-title'>
-  <%=link_to @shop.name, shop_items_path(@shop.id), class: 'shop-name' %>
-  <% if current_owner == @shop.owner %>
-    <%= link_to new_shop_item_path, class: 'display' do%>
-      <p class='display-text'>出品する</p>
-    <% end %>
-  <% end %>
-</div>
-<div class='shop-info'>
-  <%= @shop.info %>
-</div>
-
-<div class='shop-item-lists'>
-  <ul class='item-lists'>
-    <% if @items.present? %>
-      <% @items.each do |item| %>
-        <li class='list'>
-          <%= link_to shop_item_path(@shop.id, item.id), method: :get, class: 'list-item' do %>
-            <%= image_tag item.image, class: 'list-item-img' %>
-            <div class='shop-item-info'>
-              <h4 class='shop-item-name'><%= item.name %></h4>
-              <div class='shop-item-price'>
-                ¥<%= item.price %>
-              </div>
-            </div>
-          <% end %>
-        </li>
+  <div class='shop-top-main'>
+    <div class='shop-title'>
+      <%=link_to @shop.name, shop_items_path(@shop.id), class: 'shop-name' %>
+      <% if current_owner == @shop.owner %>
+        <%= link_to new_shop_item_path, class: 'display' do%>
+          <p class='display-text'>出品する</p>
+        <% end %>
       <% end %>
-    <% elsif current_owner == @shop.owner %>
-      商品を出品してください
-    <% else %>
-      商品はありません
-    <% end %>
-  </ul>
-</div>
+    </div>
+    <div class='shop-info'>
+      <%= @shop.info %>
+    </div>
 
-<%= render "shared/footer" %>
+    <div class='shop-item-lists'>
+      <ul class='item-lists'>
+        <% if @items.present? %>
+          <% @items.each do |item| %>
+            <li class='list'>
+              <%= link_to shop_item_path(@shop.id, item.id), method: :get, class: 'list-item' do %>
+                <%= image_tag item.image, class: 'list-item-img' %>
+                <div class='shop-item-info'>
+                  <h4 class='shop-item-name'><%= item.name %></h4>
+                  <div class='shop-item-price'>
+                    ¥<%= item.price %>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% elsif current_owner == @shop.owner %>
+          商品を出品してください
+        <% else %>
+          商品はありません
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+</div>

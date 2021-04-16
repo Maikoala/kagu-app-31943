@@ -1,5 +1,12 @@
+.item-show {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 .item-main {
   width: 100vw;
+  flex: 1;
 }
 
 .main-shop-name {

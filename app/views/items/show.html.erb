@@ -1,57 +1,59 @@
-<%= render "shared/title_header" %>
+<div class='item-show'>
+  <%= render "shared/title_header" %>
 
-<%= render "shared/header" %>
+  <%= render "shared/header" %>
 
-<%= render "shared/search" %>
+  <%= render "shared/search" %>
 
-<div class='item-main'>
-  <div class='main-shop-name'>
-    <%=link_to @shop.name, shop_items_path(@shop.id), class: 'item-shop-name' %>
-  </div>
-  <div class='item-image-lists'>
-    <%= image_tag @item.image, class: 'item-img' %>
-  </div>
-  <div class='item-info'>
-    <p class='item-name'><%= @item.name %></p>
-    <div class='category'>
-      カテゴリー<span class='color-category'><%= @item.category.category_name.name %></span>
+  <div class='item-main'>
+    <div class='main-shop-name'>
+      <%=link_to @shop.name, shop_items_path(@shop.id), class: 'item-shop-name' %>
     </div>
-    <div class='color'>
-      カラー<span class='color-category'><%= @item.color.name %></span>
+    <div class='item-image-lists'>
+      <%= image_tag @item.image, class: 'item-img' %>
     </div>
-  </div>
-  <div class='button'>
-    <div class='display-item-price'>
-      <h2 class='item-price'>¥<%= @item.price %></h2>
+    <div class='item-info'>
+      <p class='item-name'><%= @item.name %></p>
+      <div class='category'>
+        カテゴリー<span class='color-category'><%= @item.category.category_name.name %></span>
+      </div>
+      <div class='color'>
+        カラー<span class='color-category'><%= @item.color.name %></span>
+      </div>
     </div>
-    <div class='owner-edit'>
-      <% if owner_signed_in? && current_owner == @shop.owner %>
-        <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-delete-button edit-button' do%>
-          <p class='edit-delete-text'>編集</p>
+    <div class='button'>
+      <div class='display-item-price'>
+        <h2 class='item-price'>¥<%= @item.price %></h2>
+      </div>
+      <div class='owner-edit'>
+        <% if owner_signed_in? && current_owner == @shop.owner %>
+          <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-delete-button edit-button' do%>
+            <p class='edit-delete-text'>編集</p>
+          <% end %>
+          <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'edit-delete-button delete-button' do%>
+            <p class='edit-delete-text'>削除</p>
+          <% end %>
         <% end %>
-        <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'edit-delete-button delete-button' do%>
-          <p class='edit-delete-text'>削除</p>
+      </div>
+      <div class='user-buying'>
+        <% if user_signed_in? %>
+          <%= link_to item_orders_path(@item.id), class:'buying-button' do %>
+            購入
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-    <div class='user-buying'>
-      <% if user_signed_in? %>
-        <%= link_to item_orders_path(@item.id), class:'buying-button' do %>
-          購入
-        <% end %>
-      <% end %>
+    <div class='info-size'>
+      <div class='info'>
+        <h3 class='item-info-title'>＜ アイテム説明 ＞</h3>
+        <%= @item.info %>
+      </div>
+      <div class='size'>
+        <h3 class='item-info-title'>＜ サイズ ＞</h3>
+        <%= @item.size %>
+      </div>
     </div>
   </div>
-  <div class='info-size'>
-    <div class='info'>
-      <h3 class='item-info-title'>＜ アイテム説明 ＞</h3>
-      <%= @item.info %>
-    </div>
-    <div class='size'>
-      <h3 class='item-info-title'>＜ サイズ ＞</h3>
-      <%= @item.size %>
-    </div>
-  </div>
+
+  <%= render "shared/footer" %>
 </div>
-
-<%= render "shared/footer" %>

@@ -1,6 +1,14 @@
+.app-top-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 .top-page {
   width: 100vw;
-  height: 90vh;
+  flex: 1;
 }
 
 .top-title {

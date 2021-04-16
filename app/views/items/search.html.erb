@@ -1,27 +1,29 @@
-<%= render "shared/title_header" %>
+<div class='search-result'>
+  <%= render "shared/title_header" %>
 
-<%= render "shared/header" %>
+  <%= render "shared/header" %>
 
-<%= render "shared/search" %>
+  <%= render "shared/search" %>
 
-<div class='search-main'>
-  <h1 class='search-list-title'><%= @results.count %>件</h1>
-  <ul class='item-lists'>
-    <%if @results.length !=0 %>
-      <% @results.each do |result| %>
-        <li class='list'>
-          <%= link_to shop_item_path(result.shop.id, result.id), method: :get, class: 'list-item' do %>
-          <%= image_tag result.image, class: 'list-item-img' %>
-          <p class='list-item-name'><%= result.name %></p>
-          <p class='list-item-price'>¥<%= result.price %></p>
-          <p class='list-shop-name'><%= result.shop.name %></p>
-        </li>
+  <div class='search-main'>
+    <h1 class='search-list-title'><%= @results.count %>件</h1>
+    <ul class='item-lists'>
+      <%if @results.length !=0 %>
+        <% @results.each do |result| %>
+          <li class='list'>
+            <%= link_to shop_item_path(result.shop.id, result.id), method: :get, class: 'list-item' do %>
+            <%= image_tag result.image, class: 'list-item-img' %>
+            <p class='list-item-name'><%= result.name %></p>
+            <p class='list-item-price'>¥<%= result.price %></p>
+            <p class='list-shop-name'><%= result.shop.name %></p>
+          </li>
+          <% end %>
         <% end %>
+      <% else %>
+        該当する商品はありません
       <% end %>
-    <% else %>
-      該当する商品はありません
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
 
-<%= render "shared/footer" %>
+  <%= render "shared/footer" %>
+</div>
