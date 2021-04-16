@@ -1,30 +1,35 @@
-<h2>ユーザーログイン</h2>
+<div class='form-background user-login-back'>
+  <%= render "shared/title_header" %>
 
-<%= link_to "オーナーはこちら", new_owner_session_path %>
+  <%= form_with model:@user, url:user_session_path, class: 'form-main', local: true do |f| %>
+  <div class='form user-login'>
+    <div class='user-login-background'>
+      <div class='form-header'>
+        <h2 class='form-title'>ユーザー ログイン</h2>
+      </div>
 
-<%= form_with model:@user, url:user_session_path, local: true do |f| %>
-  <div>
-    <%= flash[:alert] %>
-  </div>
-  <div>
-    <div>
-      <label>メールアドレス</label>
-      <span>必須</span>
+      <%= render "shared/error_messages", model: f.object %>
+
+      <div class='form-group'>
+        <div class='form-text-group'>
+          <label class='form-text'>メールアドレス</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.email_field :email, placeholder: "PC・携帯どちらでも可", class: 'input-default',autofocus: true %>
+      </div>
+      <div class='form-group'>
+        <div class='form-text-group'>
+          <label class='form-text'>パスワード</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.password_field :password, class: 'input-default', placeholder: "" %>
+      </div>
+      <div class="form-button">
+        <%= f.submit "ログイン", class: 'submit-button user-login-btn' %>
+      </div>
     </div>
-    <%= f.email_field :email, placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
+  <% end %>
 
-  <div>
-    <div>
-      <label>パスワード</label>
-      <span>必須</span>
-    </div>
-    <%= f.password_field :password, placeholder:"" %>
-  </div>
-
-  <div>
-    <%= f.submit "ログイン" %>
-  </div>
-
-  <%= link_to "新規登録", new_user_registration_path %>
-<% end %>
+  <%= render "shared/footer" %>
+</div>
