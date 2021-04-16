@@ -5,8 +5,9 @@
   justify-content: center;
 }
 
-.footer-shop-name {
-  font-size: 0.5em;
+.footer-text {
+  font-size: 0.6em;
   color: #000;
   text-decoration: none;
+  margin-left: 2vw;
 }
