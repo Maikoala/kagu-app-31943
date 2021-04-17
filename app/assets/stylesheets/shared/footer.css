@@ -3,6 +3,7 @@
   height: 3vh;
   display: flex;
   justify-content: center;
+  padding-top: 0.5vh;
 }
 
 .footer-text {

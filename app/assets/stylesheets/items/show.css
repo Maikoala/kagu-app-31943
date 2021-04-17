@@ -1,4 +1,6 @@
 .item-show {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-flow: column;
   min-height: 100vh;
@@ -7,6 +9,7 @@
 .item-main {
   width: 100vw;
   flex: 1;
+  overflow: scroll;
 }
 
 .main-shop-name {
@@ -116,6 +119,7 @@
 .user-buying {
   display: table;
   text-decoration: none;
+  margin-left: 5em;
 }
 
 .buying-button {

@@ -9,6 +9,7 @@
 .top-page {
   width: 100vw;
   flex: 1;
+  overflow: scroll;
 }
 
 .top-title {
@@ -74,19 +75,23 @@
 .top-info{
   position: absolute;
   height: 36.5vh;
-  width: 11.5vw;
+  width: 13.5vw;
   top: 45.5vh;
-  left: 82.5vw;
+  left: 80.5vw;
   font-size: 1.5em;
   cursor: pointer;
 }
 
 .top-search-form{
+  height: 100%;
   font-size: 0.7em;
+  overflow: scroll;
 }
 
 .shop-list{
+  height: 100%;
   font-size: 0.7em;
+  overflow: scroll;
 }
 
 .hidden {

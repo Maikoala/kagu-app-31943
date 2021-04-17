@@ -1,11 +1,14 @@
 .shop-top-page {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-flex-flow: column;
-min-height: 100vh;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
 .shop-top-main {
   flex: 1;
+  overflow: scroll;
 }
 
 .shop-title {
