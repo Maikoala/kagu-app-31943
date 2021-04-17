@@ -1,22 +1,31 @@
 <%= search_form_for @q, url: search_items_path, class: 'top-search-form hidden', id: 'item-search-form' do |f| %>
-  <%= f.label :name_or_shop_name_i_cont, 'キーワード検索' %>
-  <%= f.search_field :name_or_shop_name_i_cont %>
-  <br>
-  <label>ショップ名</label>
-  <% @item_shop.each do |shop| %>
-    <%= f.check_box :shop_id_eq_any, { multiple: true, checked: false, disabled: false, include_hidden: false }, shop[:id] %>
-    <%= f.label :shop_id_eq, shop.name %>
-  <% end %>
-  <br>
-  <%= f.label :category_category_name_id_eq, 'カテゴリー' %>
-  <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :color_id_eq, 'カラー' %>
-  <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :price, '価格' %>
-  <%= f.number_field :price_gteq %>円〜
-  <%= f.number_field :price_lt %>円
-  <br>
-  <%= f.submit '検索'%>
+<div class='top-search-main'>
+  <div class='top-search-group'>
+    <label class='top-search-text'>キーワード検索</label>
+    <%= f.search_field :name_or_shop_name_i_cont, class: 'top-search-input' %>
+  </div>
+  <div class='top-search-group'>
+    <label class='top-search-text'>ショップ名</label>
+    <%= f.collection_select :shop_id_eq, @item_shop, :id, :name, include_blank: '指定なし' %>
+  </div>
+  <div class='top-search-group'>
+    <label class='top-search-text'>カテゴリー</label>
+    <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
+  </div>
+  <div class='top-search-group'>
+    <label class='top-search-text'>カラー</label>
+    <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
+  </div>
+  <div class='top-search-group'>
+    <label class='top-search-text'>価格</label>
+    <div class='top-seach-field'>
+      <%= f.number_field :price_gteq, class: 'top-search-price' %>〜<%= f.number_field :price_lt, class: 'top-search-price' %>円
+    </div>
+  </div>
+
+
+  <div class='top-search-button'>
+    <%= f.submit '検索', class: 'top-search-submit' %>
+  </div>
+</div>
 <% end %>
