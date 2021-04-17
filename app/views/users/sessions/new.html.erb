@@ -8,7 +8,9 @@
         <h2 class='form-title'>ユーザー ログイン</h2>
       </div>
 
-      <%= render "shared/error_messages", model: f.object %>
+      <div class='flash-login'>
+        <%= flash[:alert] %>
+      </div>
 
       <div class='form-group'>
         <div class='form-text-group'>

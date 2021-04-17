@@ -1,0 +1,19 @@
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3vh;
+}
+
+.error-message-box {
+  border: 0.2em #e9a04d dashed;
+  padding: 0.5vh 2vw;
+}
+
+.error-message {
+  font-size: 1.2vw;
+  color: #000;
+}
+
+.field_with_errors {
+  display: contents;
+}
