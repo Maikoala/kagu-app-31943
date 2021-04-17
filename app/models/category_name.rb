@@ -18,7 +18,7 @@ class CategoryName < ActiveHash::Base
     { id: 16, name: '家電、電化製品' },
     { id: 17, name: '子供家具、ベビー用品' },
     { id: 18, name: 'ペット用品' },
-    { id: 19, name: 'ガーデニング用品、ガーデンファニチャー' },
+    { id: 19, name: 'ガーデニング用品' },
     { id: 20, name: 'その他' }
   ]
 

@@ -1,37 +1,42 @@
+<div class='header-search'>
 <%= search_form_for @q, url: search_items_path, class: 'header-search-form', id: 'item-search-form' do |f| %>
-  <div class='search-form'>
-    <%= f.label :name_or_shop_name_i_cont, 'キーワード検索' %>
-    <br>
-    <%= f.search_field :name_or_shop_name_i_cont %>
-  </div>
-  <div class='bottom-form'>
-    <label class='search-shop-name' id='form-shops'>ショップ名</label>
-    <ul class='search-shops hidden', id="form-shop-list">
-      <li class='search-shop-lists'>
-      <% @item_shop.each do |shop| %>
-        <%= f.check_box :shop_id_eq_any, { multiple: true, checked: false, disabled: false, include_hidden: false }, shop[:id] %>
-        <%= f.label :shop_id_eq, shop.name %>
-      <% end %>
-      </li>
-    </ul>
-  </div>
-  <div class='search-form'>
-    <%= f.label :category_category_name_id_eq, 'カテゴリー' %>
-    <br>
-    <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
-  </div>
-  <div class='search-form'>  
-    <%= f.label :color_id_eq, 'カラー' %>
-    <br>
-    <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
-  </div>
-  <div class='search-form'>
-    <%= f.label :price, '価格' %>
-    <br>
-    <%= f.number_field :price_gteq %>円〜
-    <%= f.number_field :price_lt %>円
-  </div>
-  <div class='bottom-form'>
-    <%= f.submit '検索', class: 'submit' %>
+  <div class='header-search-main'>
+    <div class='search-form'>
+      <div class='header-search-group'>
+        <label class='header-search-text'>キーワード検索</label>
+      </div>
+      <%= f.search_field :name_or_shop_name_i_cont, class: 'header-search-input' %>
+    </div>
+    <div class='search-form'>
+      <div class='header-search-group'>
+        <label class='header-search-text'>ショップ名</label>
+      </div>
+      <%= f.collection_select :shop_id_eq, @item_shop, :id, :name, include_blank: '指定なし' %>
+    </div>
+    <div class='search-form'>
+      <div class='header-search-group'>
+        <label class='header-search-text'>カテゴリー</label>
+      </div>
+      <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
+    </div>
+    <div class='search-form'>
+      <div class='header-search-group'>
+        <label class='header-search-text'>カラー</label>
+      </div>
+      <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
+    </div>
+    <div class='search-form'>
+      <div class='header-search-group'>
+        <label class='header-search-text'>価格</label>
+      </div>
+      <div class='header-search-field'>
+          <%= f.number_field :price_gteq, class: 'header-search-price' %>〜<%= f.number_field :price_lt, class: 'header-search-price' %>円
+      </div>
+    </div>
+  
+    <div class='search-form header-search-btn'>
+      <%= f.submit '検索', class: 'header-search-submit' %>
+    </div>
   </div>
 <% end %>
+</div>
