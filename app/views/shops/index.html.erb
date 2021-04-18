@@ -34,7 +34,7 @@
             <ul class='shop-list hidden' id='shop-list'>
               <% if @shops.present? %>
                 <% @shops.each do |shop| %>
-                  <li>
+                  <li class='shop-search-list'> 
                     <%= link_to shop.name, shop_items_path(shop.id) %>
                   </li>
                 <% end %>

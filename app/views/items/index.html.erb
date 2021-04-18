@@ -7,12 +7,16 @@
 
   <div class='shop-top-main'>
     <div class='shop-title'>
-      <%=link_to @shop.name, shop_items_path(@shop.id), class: 'shop-name' %>
-      <% if current_owner == @shop.owner %>
-        <%= link_to new_shop_item_path, class: 'display' do%>
-          <p class='display-text'>出品する</p>
+      <div class='shop-title-name'>
+        <%=link_to @shop.name, shop_items_path(@shop.id), class: 'shop-name' %>
+      </div>
+      <div class='top-main-name'>
+        <% if current_owner == @shop.owner %>
+          <%= link_to new_shop_item_path, class: 'display' do%>
+            <p class='display-text'>出品する</p>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
     <div class='shop-info'>
       <%= @shop.info %>
@@ -41,9 +45,13 @@
             </li>
           <% end %>
         <% elsif current_owner == @shop.owner %>
-          商品を出品してください
+          <div class='shop-no-item'>
+            商品を出品してください
+          </div>
         <% else %>
-          商品はありません
+          <div class='shop-no-item'>
+            商品はありません
+          </div>
         <% end %>
       </ul>
     </div>

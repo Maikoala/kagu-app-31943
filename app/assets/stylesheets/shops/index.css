@@ -89,13 +89,19 @@
 }
 
 .top-search-box {
+  width: 100%;
   margin-bottom: 0;
 }
 
+.top-shop-box {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
 .shop-list{
-  height: 100%;
   font-size: 0.75em;
-  overflow: scroll;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .hidden {

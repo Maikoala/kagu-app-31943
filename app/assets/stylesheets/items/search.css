@@ -20,10 +20,14 @@
 
 .list-item-name{
   font-size: 1.2em;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .list-shop-name{
   font-size: 0.7em;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .list-item-status{

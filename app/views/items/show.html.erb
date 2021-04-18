@@ -12,8 +12,12 @@
     <div class='item-image-lists'>
       <%= image_tag @item.image, class: 'item-img' %>
     </div>
-    <div class='item-info'>
+
+    <div class='item-show-name'>
       <p class='item-name'><%= @item.name %></p>
+    </div>
+
+    <div class='item-info'> 
       <div class='category'>
         カテゴリー<span class='color-category'><%= @item.category.category_name.name %></span>
       </div>
