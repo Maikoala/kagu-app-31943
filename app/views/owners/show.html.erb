@@ -1,9 +1,32 @@
-<%= link_to "オーナー情報編集", "#" %>
+<div class='mypage-top owner-mypage'>
+  <%= render "shared/title_header" %>
 
-<div>
-<% if @shop.present? %>
-  <%= link_to "#{@shop.name}に出品する", new_shop_item_path(@shop.id) %>
-<% else %>
-  <%= link_to "Shop登録", new_shop_path %>
-<% end %>
+  <div class='mypage-main'>
+    <div class='mypage-field'>
+      <div class='mypage-btn-field'>
+        <div class='mypage-btn-group'>
+          <% if @shop.present? %>
+            <%= link_to shop_items_path(@shop.id), class: 'mypage-btn mypage-shop-btn' do %>
+              <p class='mypage-btn-text'><%= "#{@shop.name} トップページ" %></p>
+            <% end %>
+            <%= link_to new_shop_item_path(@shop.id), class: 'mypage-btn mypage-display-btn' do %>
+              <p class='mypage-btn-text'><%= "#{@shop.name}に出品する" %></p>
+            <% end %>
+          <% else %>
+            <%= link_to new_shop_path, class: 'mypage-btn mypage-opening-btn' do %>
+              <p class='mypage-btn-text'>Shop登録</p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class='mypage-btn-group'>
+          <%= link_to "#", class: 'mypage-btn mypage-edit-btn' do %>
+            <p class='mypage-btn-text'>オーナー情報編集</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
 </div>
