@@ -83,6 +83,16 @@
   font-weight: bold;
 }
 
+.item-sold-out {
+  margin-left: 5em;
+}
+
+.sold-out-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #cc0000;
+}
+
 .owner-edit {
   display: flex;
 }

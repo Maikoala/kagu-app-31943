@@ -25,14 +25,22 @@
       <div class='display-item-price'>
         <h2 class='item-price'>¥<%= @item.price %></h2>
       </div>
-      <div class='owner-edit'>
-        <% if owner_signed_in? && current_owner == @shop.owner %>
-          <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-delete-button edit-button' do%>
-            <p class='edit-delete-text'>編集</p>
-          <% end %>
-          <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'edit-delete-button delete-button' do%>
-            <p class='edit-delete-text'>削除</p>
-          <% end %>
+      <div>
+        <% if @item.order.present? %>
+          <div class='item-sold-out'>
+            <p class='sold-out-text'>Sold Out</p>
+          </div>
+        <% else %>
+          <div class='owner-edit'>
+            <% if owner_signed_in? && current_owner == @shop.owner %>
+              <%= link_to edit_shop_item_path(@shop.id, @item.id), class: 'edit-delete-button edit-button' do%>
+                <p class='edit-delete-text'>編集</p>
+              <% end %>
+              <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'edit-delete-button delete-button' do%>
+                <p class='edit-delete-text'>削除</p>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
       <div class='user-buying'>

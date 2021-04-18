@@ -14,8 +14,12 @@
             <%= link_to shop_item_path(result.shop.id, result.id), method: :get, class: 'list-item' do %>
             <%= image_tag result.image, class: 'list-item-img' %>
             <p class='list-item-name'><%= result.name %></p>
-            <p class='list-item-price'>¥<%= result.price %></p>
-            <p class='list-shop-name'><%= result.shop.name %></p>
+            <% if result.order.present? %>
+              <p class='list-item-status'>Sold Out</p>
+            <% else %>
+              <p class='list-item-status'>¥<%= result.price %></p>
+              <p class='list-shop-name'><%= result.shop.name %></p>
+            <% end %>
           </li>
           <% end %>
         <% end %>

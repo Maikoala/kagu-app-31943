@@ -27,9 +27,15 @@
                 <%= image_tag item.image, class: 'list-item-img' %>
                 <div class='shop-item-info'>
                   <h4 class='shop-item-name'><%= item.name %></h4>
-                  <div class='shop-item-price'>
-                    ¥<%= item.price %>
-                  </div>
+                  <% if item.order.present? %>
+                    <div class='shop-item-status'>
+                      Sold Out
+                    </div>
+                  <% else %>
+                    <div class='shop-item-status'>
+                      ¥<%= item.price %>
+                    </div>
+                  <% end %>
                 </div>
               <% end %>
             </li>
