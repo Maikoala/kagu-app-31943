@@ -1,8 +1,8 @@
 <div class='form-background order-back'>
   <%= render "shared/title_header" %>
 
-  <%= form_with model: @order_address, url: item_orders_path, class: 'form-main', local: true do |f| %>
-  <div class='form order-item'>
+  <%= form_with model: @order_address, url: item_orders_path, id: 'charge-form', class: 'form-main', local: true do |f| %>
+  <div class='form-field order-item'>
     <div class='form-header'>
       <h2 class='form-title'>購入内容確認</h2>
     </div>
