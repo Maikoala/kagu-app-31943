@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   before_action :set_search, only: [:index, :search, :show]
   before_action :set_item_column, only: [:index, :show, :search]
   before_action :set_category_column, only: [:index, :show, :search]
+  before_action :move_to_index_edit, only: [:edit, :update, :destroy]
 
   def index
     @items = @shop.items.order('created_at DESC')
@@ -69,5 +70,9 @@ class ItemsController < ApplicationController
 
   def move_to_index
     redirect_to root_path unless current_owner == @shop.owner
+  end
+
+  def move_to_index_edit
+    redirect_to root_path if @item.order.present?
   end
 end

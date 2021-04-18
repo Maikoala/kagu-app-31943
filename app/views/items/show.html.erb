@@ -39,18 +39,20 @@
               <%= link_to shop_item_path(@shop.id, @item.id), method: :delete, class: 'edit-delete-button delete-button' do%>
                 <p class='edit-delete-text'>削除</p>
               <% end %>
+            <% else %>
+              <div class='user-buying'>
+                <% if user_signed_in? %>
+                  <%= link_to item_orders_path(@item.id), class:'buying-button' do %>
+                  購入
+                  <% end %>
+                <% end %>
+              </div>
             <% end %>
           </div>
         <% end %>
       </div>
-      <div class='user-buying'>
-        <% if user_signed_in? %>
-          <%= link_to item_orders_path(@item.id), class:'buying-button' do %>
-            購入
-          <% end %>
-        <% end %>
-      </div>
     </div>
+
     <div class='info-size'>
       <div class='info'>
         <h3 class='item-info-title'>＜ アイテム説明 ＞</h3>
