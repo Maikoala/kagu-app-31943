@@ -1,0 +1,85 @@
+.mypage-top {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.owner-mypage {
+  height: 100vh;
+  background-color: rgb(250, 240, 194);
+  background-image: image-url("registration_2.jpeg");
+}
+
+.mypage-main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  overflow: scroll;
+}
+
+.mypage-field {
+  width: 60vw;
+  border: none;
+  border-radius: 25px;
+  padding: 3%;
+  overflow: scroll;
+}
+
+.mypage-btn-field {
+  border-radius: 25px;
+  background-color:#e2ded3;
+  padding: 3vh ;
+}
+
+.mypage-btn-group {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vh auto;
+}
+
+.mypage-btn {
+  width: 25vw;
+  height: 10vh;
+  display: table;
+  text-decoration: none;
+  text-align: center;
+  border: solid 6px;
+  font-size: 1.6em;
+  text-decoration: none;
+}
+
+.mypage-shop-btn {
+  margin-bottom: 5vh;
+  background-color: #000;
+  border-color: #f0821e;
+  color: #fff;
+}
+
+.mypage-display-btn {
+  background-color: #000;
+  border-color: #ff006f;
+  color: #fff;
+}
+
+.mypage-opening-btn {
+  background-color: #000;
+  border-color: #f9e900;
+  color: #fff;
+}
+
+.mypage-edit-btn {
+  background-color: #000;
+  border-color: #00a5dd;
+  color: #fff;
+}
+
+.mypage-btn-text {
+  display: table-cell;
+  vertical-align: middle;
+}
