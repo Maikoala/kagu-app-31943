@@ -19,26 +19,30 @@
 
       <div class='top-info'>
         <div class='top-info-scroll'>
-          <h3 class='top-search' id='top-page-search'>
-          商品検索
-          </h3>
+          <div class='top-search-box'>
+            <h3 class='top-search' id='top-page-search'>
+            商品検索
+            </h3>
 
-          <%= render "shared/top_search" %>
+            <%= render "shared/top_search" %>
 
-          <h3 class='top-shop' id='shops'>
-            shop一覧
-          </h3>
-          <ul class='shop-list hidden' id='shop-list'>
-            <% if @shops.present? %>
-              <% @shops.each do |shop| %>
-                <li>
-                  <%= link_to shop.name, shop_items_path(shop.id) %>
-                </li>
+          </div>
+          <div class='top-shop-box'>
+            <h3 class='top-shop' id='shops'>
+              shop一覧
+            </h3>
+            <ul class='shop-list hidden' id='shop-list'>
+              <% if @shops.present? %>
+                <% @shops.each do |shop| %>
+                  <li>
+                    <%= link_to shop.name, shop_items_path(shop.id) %>
+                  </li>
+                <% end %>
+              <% else %>
+                shopを登録してください
               <% end %>
-            <% else %>
-              shopを登録してください
-            <% end %>
-          </ul>
+            </ul>
+          </div>
         </div> 
       </div>
     </div>

@@ -4,17 +4,19 @@
     <label class='top-search-text'>キーワード検索</label>
     <%= f.search_field :name_or_shop_name_i_cont, class: 'top-search-input' %>
   </div>
-  <div class='top-search-group'>
+  <div class='top-search-group top-search-shop'>
     <label class='top-search-text'>ショップ名</label>
     <%= f.collection_select :shop_id_eq, @item_shop, :id, :name, include_blank: '指定なし' %>
   </div>
-  <div class='top-search-group'>
-    <label class='top-search-text'>カテゴリー</label>
-    <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
-  </div>
-  <div class='top-search-group'>
-    <label class='top-search-text'>カラー</label>
-    <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
+  <div class='top-category-color'>
+    <div class='top-search-group top-search-category'>
+      <label class='top-search-text'>カテゴリー</label>
+      <%= f.collection_select :category_category_name_id_eq, @category_name, :id, :name, include_blank: '指定なし' %>
+    </div>
+    <div class='top-search-group top-search-color'>
+      <label class='top-search-text'>カラー</label>
+      <%= f.collection_select :color_id_eq, @item_color, :id, :name, include_blank: '指定なし' %>
+    </div>
   </div>
   <div class='top-search-group'>
     <label class='top-search-text'>価格</label>

@@ -21,7 +21,7 @@
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
   color: #000;
   text-decoration: none;  
@@ -66,7 +66,7 @@
 
 .right-bottom{
   height: 37.5vh;
-  width: 24vw;
+  width: 23vw;
   position: absolute;
   top: 44.5vh;
   left: 52.5vw;
@@ -75,9 +75,9 @@
 .top-info{
   position: absolute;
   height: 37.5vh;
-  width: 16.5vw;
+  width: 18.5vw;
   top: 44.5vh;
-  left: 78.5vw;
+  left: 77.5vw;
   font-size: 1.5em;
   cursor: pointer;
 }
@@ -88,9 +88,13 @@
   overflow: scroll;
 }
 
+.top-search-box {
+  margin-bottom: 0;
+}
+
 .shop-list{
   height: 100%;
-  font-size: 0.65em;
+  font-size: 0.75em;
   overflow: scroll;
 }
 
