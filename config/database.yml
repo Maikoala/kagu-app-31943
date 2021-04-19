@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: kagu_app_31943_production
-  username: kagu_app_31943
-  password: <%= ENV['KAGU_APP_31943_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
