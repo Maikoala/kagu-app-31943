@@ -33,3 +33,8 @@
 .list-item-status{
   font-size: 1.2em;
 }
+
+.search-no-item {
+  font-size: 2em;
+  font-weight: bold;
+}  
