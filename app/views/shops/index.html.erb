@@ -35,7 +35,7 @@
               <% if @shops.present? %>
                 <% @shops.each do |shop| %>
                   <li class='shop-search-list'> 
-                    <%= link_to shop.name, shop_items_path(shop.id) %>
+                    <%= link_to shop.name, shop_items_path(shop.id), class: 'shop-list-name' %>
                   </li>
                 <% end %>
               <% else %>
