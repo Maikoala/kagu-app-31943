@@ -20,7 +20,7 @@
         </div>
 
         <div class='mypage-btn-group'>
-          <%= link_to "#", class: 'mypage-btn mypage-edit-btn' do %>
+          <%= link_to edit_owner_registration_path(current_owner.id), class: 'mypage-btn mypage-edit-btn' do %>
             <p class='mypage-btn-text'>オーナー情報編集</p>
           <% end %>
         </div>
