@@ -19,16 +19,16 @@ class Owners::RegistrationsController < Devise::RegistrationsController
                                              :birthday])
     devise_parameter_sanitizer.permit(:account_update,
                                       keys: [:account_name,
-                                            :first_name,
-                                            :last_name,
-                                            :first_name_kana,
-                                            :last_name_kana,
-                                            :postal_code,
-                                            :state_province_id,
-                                            :city,
-                                            :address_line_1,
-                                            :address_line_2,
-                                            :phone_number,
-                                            :birthday])
+                                             :first_name,
+                                             :last_name,
+                                             :first_name_kana,
+                                             :last_name_kana,
+                                             :postal_code,
+                                             :state_province_id,
+                                             :city,
+                                             :address_line_1,
+                                             :address_line_2,
+                                             :phone_number,
+                                             :birthday])
   end
 end
