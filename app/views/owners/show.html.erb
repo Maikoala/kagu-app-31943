@@ -3,7 +3,7 @@
 
   <div class='mypage-main'>
     <div class='mypage-field'>
-      <div class='mypage-btn-field'>
+      <div class='mypage-btn-field owner-btn-field'>
         <div class='mypage-btn-group'>
           <% if @shop.present? %>
             <%= link_to shop_items_path(@shop.id), class: 'mypage-btn mypage-shop-btn' do %>
@@ -20,7 +20,7 @@
         </div>
 
         <div class='mypage-btn-group'>
-          <%= link_to edit_owner_registration_path(current_owner.id), class: 'mypage-btn mypage-edit-btn' do %>
+          <%= link_to edit_owner_registration_path(current_owner.id), class: 'mypage-btn owner-edit-btn' do %>
             <p class='mypage-btn-text'>オーナー情報編集</p>
           <% end %>
         </div>
