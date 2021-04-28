@@ -1,3 +1,23 @@
-<%= link_to "ユーザー情報編集", edit_user_registration_path(current_user.id) %>
-お気に入り
-購入履歴
+<div class='mypage-top user-mypage'>
+  <%= render "shared/title_header" %>
+
+  <div class='mypage-main'>
+    <div class='mypage-field'>
+      <div class='mypage-btn-field user-btn-field'>
+        <div class='mypage-btn-group'>
+          <%= link_to "#", class: 'mypage-btn mypage-like-btn' do %>
+            <p class='mypage-btn-text'>お気に入り</p>
+          <% end %>
+          <%= link_to "#", class: 'mypage-btn mypage-history-btn' do %>
+            <p class='mypage-btn-text'>購入履歴</p>
+          <% end %>
+          <%= link_to edit_user_registration_path(current_user.id), class: 'mypage-btn user-edit-btn' do %>
+            <p class='mypage-btn-text'>ユーザー情報編集</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+</div>
