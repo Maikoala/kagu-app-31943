@@ -10,7 +10,6 @@ require("channels")
 require("../card")
 require("../top_search")
 require("../shop")
-require("../search")
 require("../price")
 require("../preview")
 
