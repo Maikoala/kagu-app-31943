@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const imageElement = document.createElement('div');
       const blobimage = document.createElement('img');
       blobimage.setAttribute('src', blob);
+      blobimage.setAttribute('class', 'form-image-preview');
 
       imageElement.appendChild(blobimage);
       ImagePreview.appendChild(imageElement);
