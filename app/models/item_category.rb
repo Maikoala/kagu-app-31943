@@ -1,9 +1,9 @@
 class ItemCategory
   include ActiveModel::Model
-  attr_accessor :image, :name, :info, :size, :category_name_id, :color_id, :price, :owner_id, :shop_id
+  attr_accessor :images, :name, :info, :size, :category_name_id, :color_id, :price, :owner_id, :shop_id
 
   with_options presence: true do
-    validates :image
+    validates :images
     validates :name, length: { maximum: 40 }
     validates :info, length: { maximum: 1500 }
     validates :size, length: { maximum: 200 }
@@ -31,7 +31,7 @@ class ItemCategory
   def save
     ActiveRecord::Base.transaction do
       @category.update(category_name_id: category_name_id)
-      @item.update(image: image, name: name, info: info, size: size, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
+      @item.update(images: images, name: name, info: info, size: size, color_id: color_id, price: price, owner_id: owner_id, shop_id: shop_id,
                    category_id: @category.id)
     end
   end
@@ -46,7 +46,7 @@ class ItemCategory
 
   def default_attributes
     {
-      image: item.image,
+      images: item.images,
       name: item.name,
       info: item.info,
       size: item.size,
