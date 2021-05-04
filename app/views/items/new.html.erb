@@ -17,7 +17,7 @@
       <div class='form-image-group'>
         <div class='click-upload'>
           <p class='upload-attention'>クリックしてファイルをアップロード</p>
-          <%= form.file_field :image %>
+          <%= form.file_field :images, name: 'item[images][]', id: 'item_image' %>
         </div>
         <div id='image-preview'></div>
       </div>

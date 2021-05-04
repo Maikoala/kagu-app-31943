@@ -9,10 +9,13 @@
     <div class='main-shop-name'>
       <%=link_to @shop.name, shop_items_path(@shop.id), class: 'item-shop-name' %>
     </div>
-    <div class='item-image-lists'>
-      <%= image_tag @item.image, class: 'item-img' %>
+    <div class='item-main-image'>
+      <div class='item-image-lists'>
+        <% @item.images.each do |image| %>
+          <%= image_tag image, class: 'item-img' %>
+        <% end %>
+      </div>
     </div>
-
     <div class='item-show-name'>
       <p class='item-name'><%= @item.name %></p>
     </div>
