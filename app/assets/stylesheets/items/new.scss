@@ -9,13 +9,13 @@
 
 .form-image-group {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .click-upload {
-  margin: 2% 0;
+  margin-top: 2%; 
   min-width: 250px;
-  text-align: end;
+  text-align: start;
 }
 
 .upload-attention {
@@ -24,10 +24,17 @@
   font-size: 0.9em;
 }
 
+.image-element {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-image-preview {
   height: 17vh;
   width: 20vw;
   object-fit: contain;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 .item-info-input {
