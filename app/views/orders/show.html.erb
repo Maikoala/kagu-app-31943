@@ -1,0 +1,37 @@
+<div class='shop-top-page'>  
+
+  <%= render "shared/title_header" %>
+
+  <%= render "shared/header" %>
+
+  <div class='shop-top-main'>
+    <div class='order-history-title'>
+      <h2 class='order-history-name'><%= "#{current_user.nickname}さんの購入履歴" %></h2>
+    </div>
+    <div class='shop-item-lists'>
+      <ul class='item-lists'>
+        <% if @orders.present? %>
+          <% @orders.each do |order| %>
+            <li class='list'>
+              <%= link_to "/shops/#{order.item.shop_id}/items/#{order.item_id}", class: 'list-item' do %>
+                <%= image_tag order.item.images[0], class: 'list-item-img' %>
+                <div class='shop-item-info'>
+                  <p class='shop-item-name'><%= order.item.name %></p>
+                  <p class='shop-item-status'>
+                  ¥<%= order.item.price %>
+                  </p>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% else %>
+          <div>
+            購入商品はありません
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+</div>
