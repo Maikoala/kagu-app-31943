@@ -18,6 +18,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @orders = current_user.orders.order('created_at DESC')
+  end
+
   private
 
   def set_item

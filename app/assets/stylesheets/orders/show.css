@@ -1,0 +1,11 @@
+.order-history-title {
+  width: 90vw;
+  display: flex;
+  margin: 3vh auto;
+}
+
+.order-history-name {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #000;
+}

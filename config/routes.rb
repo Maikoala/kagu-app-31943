@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :orders, only: [:index, :create]
+    resources :orders, only: [:index, :create, :show]
   end
 
   resources :owners, only: [:show]
