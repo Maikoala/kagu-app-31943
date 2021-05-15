@@ -264,3 +264,15 @@ http://localhost:3000
 ### Association
 
 - belongs_to :order
+
+## favorite テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
